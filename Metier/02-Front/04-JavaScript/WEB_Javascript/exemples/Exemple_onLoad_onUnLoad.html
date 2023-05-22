@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Exemple onLoad et onUnLoad</title>
+		<script type="text/JavaScript" language="JavaScript">
+			// <![CDATA[
+			function bienvenue() {
+				alert("Bienvenue sur Cette page");
+			}
+			function au_revoir() {
+				alert("Au revoir");
+			}
+			// ]]>
+		</script>
+	</head>
+	
+	<body onLoad='bienvenue()' onUnload='au_revoir()'>
+		Actualisez cette page (raccourci touche F5)
+	</body>
+</html>

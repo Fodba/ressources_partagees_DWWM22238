@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+    	<div id="label1">Entrez votre proposition</div>
+    	<input id="textBox1" value="">
+    	<input type="button" id="button1" value="Verifier" onclick="verif();">
+  </body>
+</html>
+
+<script>
+	var magicNumber = parseInt(Math.random(100)*100);
+	console.log(magicNumber);
+
+	function verif () {
+		var reponse = parseInt(document.getElementById("textBox1").value);
+		var resultat = document.getElementById("label1");
+		console.log(reponse);
+		console.log(resultat);
+		console.log(magicNumber);
+		if (reponse < magicNumber) {
+			resultat.innerHTML = "Trop petit";
+		}
+		if (reponse > magicNumber) {
+			resultat.innerHTML = "Trop grand";
+		}
+		if (reponse == magicNumber) {
+			resultat.innerHTML = "Bravo";
+		}
+	}
+</script>

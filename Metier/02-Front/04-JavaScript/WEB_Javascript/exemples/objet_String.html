@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Objet String - Exemples</title>
+	</head>
+	<body>
+		<script type="text/JavaScript" language="JavaScript">
+			// <![CDATA[	
+			document.write("<br />Longueur de 'chaîne de caractères' : " + ("chaîne de caractères").length); 
+			document.write("<br />");
+
+			var str = new String("Hello World !");
+			document.write("<br />Objet String : '" 	+ str + "'");
+			document.write("<br />- Longueur  : " 		+ str.length); 
+			document.write("<br />- 7ème caractère : " 	+ str.charAt(6));
+
+			var str2 = "Wor";
+			document.write("<br />- position de '" + str2 + "' depuis 0 : " + str.indexOf(str2,0));
+			document.write("<br />- position de '" + str2 + "' depuis 10 : " + str.indexOf(str2,10));
+			
+			var chr = 'o';
+			document.write("<br />- dernière position de '" + chr + "' : " + str.lastIndexOf(chr));
+			
+			var reg1 = new RegExp("window");
+			var reg2 = new RegExp(" ","g");
+
+			if (str.match(reg1)) document.write("<br />- L'expression 'window' est présente dans '" + str + "'.");
+			else 				 document.write("<br />- L'expression 'window' n'est pas présente dans '" + str + "'.");
+			
+			if (str.match(reg2)) document.write("<br />- L'espace est présent dans '" + str + "'.");
+			else 				 document.write("<br />- L'espace n'est pas présent dans '" + str + "'.");
+			
+			document.write("<br />- Les occurences de l'espace sont remplacées par des '_' : '" + str.replace(reg2, '_') + "'");
+			
+			document.write("<br />- sous chaîne (3,8) : " + str.substring(3,8));
+			
+			document.write("<br />- TOUT MAJUSCULE : " + str.toUpperCase());
+			document.write("<br />- tout minuscule : " + str.toLowerCase());
+			// ]]>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+	Faire un exemple complet pour la fin du chapitre : 1.	JAVASCRIPT INTRODUCTION
+		(Comme la solution complète Learning Tree)
+
+AJOUTER L’APPEL A UNE PETITE APPLICATION QUI MONTRE LES UTILITES DE JAVASCRIPT côté Client :
+-	Demande d’information via une fenêtre modale
+-	Contenu de page Web personnalisé avec mon nom par exemple issu de l’information donnée précédemment
+-	Capacité à mémoriser le nom (Cookie)
+-	Capacité à l’oublier
+-	Graphiques interactifs (Passage de la souris sur l’image)
+-	Validation de formulaires
+-	Ouvertures de nouvelles fenêtres (boîtes de dialogue) avec alertes et info sur le statut
+-	Ouverture de nouvelles fenêtre avec du contenu
+Effets HTML dynamique
+
+		
+		
+	Ajouter des exercices fin chapitre : 11 Les événements
+		(Comme l'exercice 3.2 Learning Tree - basé sur les images réactives)
+		(voir Exemple/Rollover/promo_down.gof et promo_up.gif)
+		

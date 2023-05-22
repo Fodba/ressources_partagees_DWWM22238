@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Formatage</title>
+		<script>
+			document.bgColor="black";
+			document.fgColor="white"; 
+			document.alinkColor="#FF0000"; 
+			document.linkColor="#yellow"; 
+			document.vlinkColor="#00FF00";
+		</script>
+	</head>
+
+	<body>
+		
+		quel est le meilleur navigateur ? <br />
+		<a href="#">Ce lien mène nulle part ...</a> <br />
+		
+		<br />
+		
+		<script>
+			document.write("Votre âge : ");
+			var age = 35;
+			document.write(age);
+			document.write("<br />");
+			document.write("Votre âge est " + age); 
+			document.write("<br />");
+			document.write("<b>Votre âge est </b>" + age);
+			document.write("<br />");
+			document.write("<b>" + " Votre âge est " + "</b>" + age); 
+			document.write("<br />");
+			
+			document.write(document.lastModified); 
+			
+		</script>
+	</body>
+</html>

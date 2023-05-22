@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Intercepte la validation du formulaire</title>
+		
+		<script type="text/JavaScript" language="JavaScript">
+			// <![CDATA[
+			function checkForm(submit, f) {
+				alert("Vous vous appelez : " + f.elements['nom'].value + " " + f.elements['prenom'].value);
+				
+				if(submit.id == "idSubForm1") {
+					alert("La validation du formulaire est refusée");
+					return false;
+				} else if (submit.id == "idSubForm2") {
+					alert("La validation du formulaire est acceptée");
+					//return true;  // suffisant pour envoyer le formulaire depuis un élément de type "submit"
+					f.submit();    //  envoi le formulaire explicitement (utile pour les éléments de type "button" nottament)
+				}
+			}
+			
+			function resetForm() {
+				alert("La réinitialisation passe par là");
+			}
+			
+			function annuleForm(f) {
+				alert("La réinitialisation passe par là");
+				f.reset();
+			}
+			// ]]>
+		</script>
+	</head>
+	<body>
+		<h2>Intercepte la validation du formulaire</h2>
+		<form action="_simple_page.html" id="form1" name="form1">
+			<input type="text" name= "nom" value="Dupont" />
+			<input type="text" name= "prenom" value="Eric" />
+			<input type="submit" id="idSubForm1" name="subForm1" value="ConnectionRefusee" onClick="return checkForm(this, this.form);" />
+			<input type="button" id="idSubForm2" name="subForm1" value="ConnectionAcceptee" onClick="return checkForm(this, this.form);" />
+			<input type="reset"  id="idReset" name="resForm1" value="ResetAnnuler" onClick="resetForm();" />
+			<input type="button"  id="idBtnReset" name="resForm1" value="BtnAnnuler" onClick="annuleForm(this.form);" />
+		</form>
+	</body>
+</html>
+
+
+				

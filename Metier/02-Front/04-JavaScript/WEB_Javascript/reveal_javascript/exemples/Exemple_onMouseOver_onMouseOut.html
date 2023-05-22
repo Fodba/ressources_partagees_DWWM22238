@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Exemple onMouseOver et onMouseOut</title>
+		
+		<script type="text/JavaScript" language="JavaScript">
+			// <![CDATA[
+			function message(str){
+				alert(str);
+			}
+			
+			function survol(objet, fichier) {
+				if (document.images) {
+					document.images[objet].src = 'images/' + fichier;
+				}
+			}
+		// ]]>
+		</script>
+
+	</head>
+	<body>
+		<a href="#" onMouseOver="message('Over');">message important</a>
+		<br />
+		<br />
+		<br />
+		<a href="#" onMouseOut="message('Out')">message commun</a>
+		
+		<br /><hr /><br />
+		
+		<img src="images/bleu_p.jpg"  border="0" width="38" height="20" onMouseover="this.src='images/bleu_a.jpg';"  onMouseout="this.src='images/bleu_p.jpg';" />
+		<img src="images/rouge_p.jpg" border="0" width="38" height="20" onMouseover="this.src='images/rouge_a.jpg';" onMouseout="this.src='images/rouge_p.jpg';" />
+		<img src="images/vert_p.jpg"  border="0" width="38" height="20" onMouseover="this.src='images/vert_a.jpg';" onMouseout="this.src='images/vert_p.jpg';" />
+	
+		<br /><hr /><br />
+		<p> Lien avec des images transparentes ci-dessous</p>
+		<a href="#" id="idLien1"
+				onMouseOver="survol('image1', 'afpa.gif');" 
+				onMouseOut="survol('image1', 'image_transparente.gif');">
+			<img id="image1" border="0" src="images/image_transparente.gif" width="300" height="360" />
+		</a>
+		<a href="#" id="idLien2"
+				onMouseOver="survol('image2', 'afpa.gif');" 
+				onMouseOut="survol('image2', 'image_transparente.gif');">
+			<img id="image2" border="0" src="images/image_transparente.gif" width="300" height="360" />
+		</a>
+		<a href="#" id="idLien3"
+				onMouseOver="survol('image3', 'afpa.gif');" 
+				onMouseOut="survol('image3', 'image_transparente.gif');">
+			<img id="image3" border="0" src="images/image_transparente.gif" width="300" height="360" />
+		</a>
+		<a href="#" id="idLien4" onMouseOver="window.open('http://www.toutjavascript.com');" >
+			<img id="image4" border="0" src="images/image_transparente.gif" width="300" height="360" />
+		</a>			
+		<br /><hr /><br />
+	</body>
+</html>

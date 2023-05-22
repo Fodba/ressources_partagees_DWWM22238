@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Objet Math - Exemples</title>
+	</head>
+	<body>
+		<script type="text/JavaScript" language="JavaScript">
+			// <![CDATA[	
+			var maxVal = Math.max(10,20);
+			document.write("<br />max entre 10 et 20 : " + maxVal); 
+			document.write("<br />min entre 10 et 20 : " + Math.min(10,20)); 
+			document.write("<br />");
+			
+			var y = 4;
+			document.write("<br />absolu de " + y + " : " + Math.abs(y));
+			document.write("<br />absolu de 4 : " + Math.abs(4));
+			document.write("<br />absolu de -4 : " + Math.abs(-4));
+			document.write("<br />");
+			
+			var y = 1.01;
+			document.write("<br />ceil de " + y + " : " + Math.ceil(y));
+			document.write("<br />floor de " + y + " : " + Math.floor(y));
+			document.write("<br />round de " + y + " : " + Math.round(y));
+			var y = 1.51;
+			document.write("<br />round de " + y + " : " + Math.round(y));
+			document.write("<br />");
+			
+			document.write("<br />2 puissance 4  : " + Math.pow(2,4));
+			document.write("<br />racine carrée de 9  : " + Math.sqrt(9));
+			document.write("<br />");
+			
+			document.write("<br />valeur aléatoire comprise entre 0 et 10  : " + Math.round(Math.random()*10));
+			document.write("<br />");
+			
+			var str = '5 + 10';
+			document.write("<br />La variable 'str' contient la chaîne suivante : '5 + 10'");
+			document.write("<br />eval(str) = " + eval(str));
+			document.write("<br />eval(\"x=10;y=20;document.write('10*20 = \' + x*y)\") : ");
+			eval("x=10;y=20;document.write('<br />10*20 = ' + x*y)");
+			document.write("<br />");
+			if(isNaN(str)) document.write("la variable 'str' n'est pas de type numérique !");
+			document.write("<br />");
+			if(!isNaN(eval(str))) document.write("l'eval de la variable 'str' est de type numérique !");
+
+			// ]]>
+		</script>
+	</body>
+</html>

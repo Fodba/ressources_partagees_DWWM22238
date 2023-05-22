@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Belle écriture</title>
+	</head>
+	<body>
+		
+		Je suis un texte par défaut ! <br />
+		
+		<script>
+			var str = "Je suis BIG";
+			document.write("<br /><big>" + str + "</big>");
+			document.write("<br />" + str.big());
+			document.write("<br />");
+			
+			document.write("<br /><small>Je suis petit</small>"); 
+			document.write("<br />Je suis petit".small());
+			document.write("<br />");
+			
+			str = "Je CLIGNOTE sous MOZILLA"; 
+			document.write("<br /><blink>" + str + "</BLINK>"); 
+			document.write("<br />" + str.blink());
+			document.write("<br />");
+			
+			document.write("<br /><b>Je suis en BOLD</b>"); 
+			document.write("<br />Je suis en BOLD".bold());
+			document.write("<br />");
+			
+			str = "Je suis FIXE"; 
+			document.write("<br /><tt>" + str + "</TT>"); 
+			document.write("<br />" + str.fixed()); 
+			document.write("<br />");
+			
+			document.write("<br /><i>Je suis en italique</i>"); 
+			document.write("<br />Je suis en italique".italics()); 
+			document.write("<br />");
+			
+			str = "Je change de couleur !"; 
+			document.write("<br /><font color='red'>" + str + "</font>");
+			document.write("<br />" + str.fontcolor('green')); 
+			document.write("<br />");
+			
+			str = "Je grossis";
+			document.write("<br /><font size='+1'>" + str + "</font>"); 
+			document.write("<br />" + str.fontsize(5)); 
+			document.write("<br />" + str.fontsize(6)); 
+			document.write("<br />");
+
+			document.write("<br /><strike>Je suis barré</strike>");
+			document.write("<br />Je suis barré".strike()); 
+			document.write("<br /><br />");
+			
+			str = " indice 2"; 
+			document.write("<br />3<sub>" + str + "</sub>");
+			document.write("<br />3" + str.sub()); 
+			document.write("<br />");
+			
+			str = "exposant 4"; 
+			document.write("<br />3<sup>" + str + "</sup>"); 
+			document.write("<br />3" + str.sup()); 
+			document.write("<br />"); 
+			
+			
+		</script>
+	</body>
+</html>

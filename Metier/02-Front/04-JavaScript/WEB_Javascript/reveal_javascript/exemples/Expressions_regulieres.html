@@ -1,0 +1,75 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1" />
+        <title>Expressions régulières</title>
+        
+		<script language="JavaScript" type="text/javascript">
+            // <![CDATA[
+			function verifExpr(expression,chaine){
+					if (expression.test(chaine))
+						document.write("<br />L'expression régulière (" + expression + ") est présente dans '" + chaine + "'");
+					else
+						document.write("<br />L'expression régulière (" + expression + ") n'apparaît pas dans '" + chaine + "'");
+			}
+			
+			
+			var exp1 = new RegExp("a","g");
+			//var exp1 = /a/g;
+			var chaine = "abracadabra"; 
+			chaine = chaine.replace(exp1, "A"); // on remplace tout les 'a' par des 'A' 
+			with(document) {
+				writeln("<br />L'expression régulière : " + exp1);
+				write("<br />" + chaine); // Sortie -> AbrAcAdAbrA
+				write("<br />");
+			}
+				
+			var exp2 = /.+@.+/;
+			verifExpr(exp2,"ab@ab");
+			verifExpr(exp2,"ab@");
+			document.write("<br />");
+			
+			var exp3 = /[tm]oi/i; 
+			with(document){ 
+				writeln("<br />L'expression régulière : " + exp3);
+				writeln("<br />ignoreCase ? " + exp3.ignoreCase);
+				writeln("<br />global ? " + exp3.global);
+				writeln("<br />'moi' ? " + exp3.test("moi"));// true 
+				writeln("<br />'ToI' ? " + exp3.test("toi"));// true 
+				writeln("<br />'roi' ? " + exp3.test("roi"));// false
+				writeln("<br />");
+			}
+
+			var tab = exp3.exec("monSol");
+			document.write("<br />'monSol' ? " + tab);
+			var tab = exp3.exec("monToit");
+			with(document){ 
+				writeln("<br />'monToit' ? " + tab);
+				writeln("<br /> tab[0] : " + tab[0]);
+				writeln("<br /> tab.index : " + tab.index);
+				writeln("<br /> tab.input : " + tab.input);
+				writeln("<br /> lastIndex (sous IE !) ? " + exp3.lastIndex);
+				writeln("<br />");
+			}
+			
+			var exp4 = /[a-l]ou/i; 
+			with(document){
+				writeln("<br />L'expression régulière : " + exp4);
+				writeln("<br />'cou' ? " + exp4.test("cou"));// true 
+				writeln("<br />'pou' ? " + exp4.test("pou"));// false 
+				writeln("<br />");
+			}
+			
+			var bank = "dinar dollar franc lire livre mark yen"; 
+			var zEuro = /(escudo|florin|franc|lire|mark|peseta)/gi; 
+			var gras = "<b>$1</b>"; 
+			var resultat = bank.replace(zEuro, gras);
+			document.writeln(resultat);
+			
+			// ]]>
+        </script>
+    </head>
+	
+	<body>
+	</body>
+</html>

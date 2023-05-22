@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Javascript | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+ 
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		.slides section kbd 
+		{
+		    font-family : "Courier New";
+			font-size: 30px;
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section data-background="#87bd26">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA">				 					
+				</section>
+			
+			   	<section data-background="#87bd26">
+					<h1>Javascript</h1>	
+                    <img src="images/js.png" width="256" height="256" alt="Logo JS" title="Logo JS">				 								
+				</section>
+				<section data-background="#87bd26">
+					<h1>Javascript partie Algo</h1>
+					<ul>
+					 	<li>Variables</li>		
+ 	                    <li>Conditions</li>		
+                        <li>Boucles</li>		
+                        <li>Fonctions</li>				  
+                    </ul>							
+				</section>                
+				<section data-background="#87bd26">
+					<h1>Javascript</h1>
+					<ul>
+					 	<li>Permet de rendre dynamique une page HTML (grâce à des évènements)</li>			
+					    <li class="fragment">Langage orienté objet</li>	
+						<li class="fragment">Sensible à la casse : <pre><code class="hljs">myVar != myvar</code></pre></li>	
+                        <li class="fragment">Norme ECMA : ES6 (= ES2015)</li>		
+                    </ul>							
+				</section>                
+				<section data-background="#87bd26">
+					<h1>Javascript</h1>
+					<ul>
+						<li>Côté client (interprété par le navigateur)</li>
+						<li class="fragment">Librairies/frameworks : Jquery, Angular, VueJS</li>	  
+                        <li class="fragment">Applications complètes</li>								
+					</ul>							
+				</section>			
+				<section data-background="#87bd26">
+				  <h1>Appels  des scripts</h1>
+				    <ul>
+						<li class="fragment">Fichier externe : <pre><code class="hljs">&lt;script src="js/fichier.js"&gt;&lt;/script&gt;</code></pre></li>							
+						<li class="fragment">/!\ en fin de page avant la fermeture de <pre><code class="hljs">&lt;/body&gt;</code></pre></li>	
+                        <li class="fragment">/!\ Inutile en HTML 5 : <pre><code class="hljs">&lt;script type="text/javascript"...</code></pre></li>											   			
+					</ul>							
+				</section>		
+				<section data-background="#87bd26">
+				  <h1>Appels des scripts</h1>
+				    <ul>
+						<li class="fragment">Dans une balise script directement dans le HTML : <pre><code class="hljs"><script>alert("Hello l'AFPA !");</script></code></pre></li>
+					    <li class="fragment">Pas d'appel dans une balise <pre><code class="hljs">&lt;a href="page.html" onclick="alert('Ici !')";&gt;</code></pre></li>						
+					</ul>							
+				</section>		
+                <section data-background="#87bd26">
+					<h1>Syntaxe</h1>
+					<ul>
+						<li>Mots réservés (<code class="code">if</code>, <code class="code">break</code>, <code class="code">var</code>, <code class="code">try</code>...)</li>
+					    <li class="fragment">Ni espaces ni accents ni tirets, underscore autorisé</li>
+						<li class="fragment">Langage "typé" : types déclarés (conversions)</li>	
+                        <li class="fragment">Concaténation : <pre><code>alert("Bonjour "+myVar);</code></pre></li> 						
+					</ul>					
+				</section>			   	
+                <section data-background="#87bd26">
+					<h1>Types de données</h1>
+					<ul>
+						<li>Chaîne (string)</li>
+					    <li class="fragment">Nombre (number)</li>
+						<li class="fragment">Booléen (true/false)</li>
+						<li class="fragment">Tableaux (array)</li>
+						<li class="fragment">Objets</li>						
+					</ul>															
+				</section>				
+                 <section data-background="#87bd26">
+				<h1>2 types particuliers</h1>
+					<ul>
+						<li><code class="code">null</code> : absence de données dans une variable ('null' volontairement affecté)</li>
+						<li class="fragment"><code class="code">undefined</code> : variable existe mais  n'a pas de valeur affectée</li>								
+					</ul>															
+				</section>										
+				<section data-background="#87bd26">
+					<h1>Commentaires</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						// Cette ligne seule est en commentaire
+						
+						/* Ceci est un bloc de commentaires (plusieurs lignes) 
+						console.log("Ne s'affiche pas car en commentaires");
+						console.log("Ne s'affiche pas non plus");
+						*/						
+						</code>
+					</pre>															
+				</section>			   
+				<section data-background="#87bd26">
+					<h1>Déclaration et affectation</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						var i;
+						var i, j, k;
+						var myVar = 123; // entier
+						var myVar = "Hello l'AFPA"; // chaîne
+						var bVar = TRUE; // booléen
+						let myVar; // portée : bloc courant	                         						
+						</code>
+					</pre>															
+				</section>		
+				<section data-background="#87bd26">
+					<h1>Tableaux</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						var tableau = [1, 2, 3]; // tableau de valeurs numériques
+						var tableau = ["Pierre", "Paul", "Jacques"]; // tableau de chaînes	                        						
+						</code>
+					</pre>															
+				</section>	
+                <section data-background="#87bd26">
+					<h1>Objets natifs</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						window.status = "Change le message dans la barre de statut)";
+						var date1 = new Date('March 27, 2018 09:56:07'); // Calcul sur dates
+						var nombre = new Math.pow(2, 2); // Fonctions mathématiques							
+						</code>
+					</pre>	
+				</section>						
+				<section data-background="#87bd26">
+					<h1>Fonctions de base</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						alert();
+						console.log();
+						document.write(); // A oublier
+						confirm(); // question
+						prompt(); // saisir un texte 						
+						</code>
+					</pre>															
+				</section>		
+                <section data-background="#87bd26">
+					<h1>Fonctions utiles</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						document.getElementById('unDiv'); // ou ByName, ByClassName
+						document.querySelector('#unDiv');  // attention au #
+						isNaN("Une chaîne"); // => retourne FALSE
+						console.log(typeof 42); // affiche "number"
+						console.log(typeof 'afpa'); // affiche : "string"				
+						</code>
+					</pre>															
+				</section>		
+				<section data-background="#87bd26">
+					<h1>Fonctions utilisateurs</h1>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						function ttcPrice(price, tva)
+						{
+						   ttcprice = price*tva;
+						   return ttcprice;                            							
+						}																
+						</code>
+					</pre>															
+				</section>		
+				<section data-background="#87bd26">
+					<h1>Manipulation du DOM</h1>
+					<ul>
+						<li>Modifier la fenêtre (objets Window, Document)</li>
+					    <li class="fragment">Modifier le code HTML et CSS</li>	
+						<li class="fragment">Gérer les cookies</li>	                      						
+					</ul>																			
+				</section>		
+                <section data-background="#87bd26">
+					<h1>Evènements</h1>
+					<ul>
+						<li>Action utilisateur déclenche du code Javascript (fonction)</li>
+					    <li class="fragment">Evènements : click, mouseover, keypress, focus, change, submit etc.</li>		
+                        <li class="fragment"><pre><code class="hljs">&lt;a href="page.html" onclick="showmessage();"&gt;</code></pre></li>									
+					</ul>																			
+				</section>		
+                 <section data-background="#87bd26">
+					<h1>Utilisations avancées</h1>
+					<ul>
+					    <li>Ajax (objet <code class="code">XmlHttpRequest</code>) : base de données</li>
+						<li class="fragment">Frameworks : JQuery, Vue, Angular, React, Meteor etc.</li>
+						<li class="fragment">Application côté serveur : NodeJS</li>
+					</ul>		
+				</section>	             	
+			   <section data-background="#87bd26">
+					<h1>Outils</h1>
+					<ul>
+						<li class="fragment">Console : <kbd>F12</kbd> ou <kbd>Ctrl + Shift + J</kbd></li>
+						<li class="fragment">Validateur de code : <a href="https://www.jslint.com" title="JSLint" target="_blank">JSLint</a></li>											
+					</ul>						
+				</section>			   
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+					
+                transition: 'convex', // none, fade, slide, convex, concave, zoom
+                					
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    
+  </head>
+  <body>
+    <form id="form1" action="http://serveur/script.php" >
+    	<input name="nom" type="text" required pattern="^[a-z]+$">
+		<input name="prenom" type="text" required pattern="^[a-z]+$">
+		<input type="submit">
+    </form>
+    <div id="label1"></div>
+  </body>
+</html>
+
+<script>
+window.setInterval(function() {
+	var ff = document.getElementById("form1");
+	var sortie = document.getElementById("label1");
+	if (ff.checkValidity()) {
+		sortie.innerHTML = "OK";
+	}
+	else {
+		sortie.innerHTML = "pas bon";
+	}
+}, 100);
+
+</script>
