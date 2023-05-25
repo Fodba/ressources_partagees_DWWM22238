@@ -6,7 +6,7 @@ function saisieUtilisateur(pMessage){
     return saisie;
 }
 
-function SaisieNumerique(pMessage){
+function saisieNumerique(pMessage){
     let saisie = saisieUtilisateur(pMessage);
     // conversion de la saisie en nombre
     saisie = parseInt(saisie);
@@ -186,4 +186,61 @@ Le but est de deviner ce nombre, qui sera saisit dans une zone de texte.
 Le nombre d’essai autorisé est de 10, l’utilisateur est averti pour chaque essai concernant le nombre d’essai restant
 Quand l’utilisateur gagne, on affiche le nombre de coups qu’il lui a fallu
  */
+console.log('=============== Exercice 4 =================');
 
+let nombreADeviner = 0;
+let nombreDeChances = 10;
+let mini = 10;
+let maxi = 100;
+let saisie;
+let aGagne = false;
+let rejouer, continuer;
+
+do{
+    continuer = false;
+
+    nombreADeviner = Math.floor(Math.random() * (maxi - mini + 1) + mini);
+    console.log(nombreADeviner);
+
+    for (let i = nombreDeChances; i > 0; i--) {
+        if(i == 1){
+            alert("Attention, C'est votre dernière tentative");
+        }
+        else{
+            alert(`Il vous reste ${i} tentatives`);
+        }
+
+        let estCorrect;
+        do{
+            estCorrect = true;
+            saisie = saisieNumerique("Devinez le nombre mystère:");
+            if(isNaN(saisie)){
+                alert("Veuillez entrer un nombre");
+                estCorrect = false;
+            }
+            else if(saisie < 10 || saisie > 100){
+                alert("Veuillez entrer un nombre entre 10 et 100");
+                estCorrect = false;
+            }
+        }while(!estCorrect);
+
+        if(saisie < nombreADeviner) { 
+            alert("Le nombre à deviner est plus grand");
+        }
+        else if(saisie > nombreADeviner){
+            alert("Le nombre à deviner est plus petit");
+        }
+        else{
+            alert("Bravo, vous avez trouvé le nombre: ", nombreADeviner);
+            aGagne = true;
+            break;
+        }
+    }
+
+    if (!aGagne){
+        rejouer = saisieUtilisateur("Vous n'avez pas gagné cette fois-ci.\nVoulez-vous rejouer? (O/N)")
+        if(rejouer.toLowerCase() == "o"){
+            continuer = true;
+        }
+    }
+} while(continuer);
