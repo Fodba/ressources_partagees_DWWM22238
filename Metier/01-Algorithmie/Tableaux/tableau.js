@@ -136,7 +136,7 @@ for (let i = 0; i < 7; i++) {
     let valeur;
     let bIterationOk = false;
     do{
-        valeur = SaisieNumerique("Veuillez entrer le nombre n° " + (i + 1) + " (entre 9 et 99)");
+        valeur = saisieNumerique("Veuillez entrer le nombre n° " + (i + 1) + " (entre 9 et 99)");
         if(valeur < 9 || valeur > 99 || isNaN(valeur)){
             faussesIterations++; 
         }
@@ -239,8 +239,12 @@ do{
 
     if (!aGagne){
         rejouer = saisieUtilisateur("Vous n'avez pas gagné cette fois-ci.\nVoulez-vous rejouer? (O/N)")
-        if(rejouer.toLowerCase() == "o"){
-            continuer = true;
-        }
+    }
+    else{
+        rejouer = saisieUtilisateur("Voulez-vous rejouer? (O/N)")
+    }
+    
+    if(rejouer.toLowerCase() == "o"){
+        continuer = true;
     }
 } while(continuer);
