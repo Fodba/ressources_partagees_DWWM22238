@@ -2,7 +2,7 @@ Réalisez à l'aide de vos connaissances les pages présentés:
 
 ![accueil](accueil.jpg)
 ![contacct](contact.jpg)
-![formulaire](formulaire_coordonnees.jpg)
+![formulaire](formulaire_coordonees.jpg)
 
 échangez avec vos collègues de formation sur la marche à suivre, consultez les ressources proposées ou celles que vous trouverez sur Internet.
 N'oubliez pas également de solliciter votre formateur en cas de difficultés (il est là pour ça).
