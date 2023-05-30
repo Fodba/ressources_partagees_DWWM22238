@@ -1,3 +1,4 @@
+//1.
 function saisieUtilisateur(message){
     let saisie = prompt(message);
     return saisie;
@@ -61,9 +62,7 @@ function moyenne(pTableau){
     return resultat;
 }
 
-
-
-
+//2.
 function trier(pTableau){
     let temp;
     const tableau = pTableau.slice(0);
@@ -79,7 +78,7 @@ function trier(pTableau){
     return tableau;
 }
 
-
+//3.
 function saisieMots(pNombreDeMots){
     const tableauDeMots = [];
     let saisie;
@@ -147,4 +146,25 @@ function motsSansVoyelles(pTableau){
         }
     }
     return tabDeMots;
+}
+
+//4.
+
+function verifNom(pNom){
+    let estValide;
+    let nomRegex = new RegExp("^[a-zA-Zàâäéèêëîïôöùûüÿ\'\ \-]+$");
+    estValide = nomRegex.test(pNom);
+    return estValide;
+}
+function verifDDN(pDate){
+    let estValide;
+    let dateRegex = new RegExp("^([0-3])?[0-9]\/([0-3])?[0-9]\/([0-9][0-9])?[0-9][0-9]+$");
+    estValide = dateRegex.test(pDate);
+    return estValide;
+}
+function verifMail(pMail){
+    let estValide;
+    let mailRegex = new RegExp("^[a-zA-Zàâäéèêëîïôöùûüÿ\'\-]+[@][a-zA-Zàâäéèêëîïôöùûüÿ\'\-]+[.][a-zA-Zàâäéèêëîïôöùûüÿ\'\-]+$");
+    estValide = mailRegex.test(pMail);
+    return estValide;
 }

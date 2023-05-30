@@ -1,0 +1,56 @@
+*{
+    border: 1px solid black;
+}
+
+section, header, body > form {
+    width: 45%;
+    /* margin: auto; */
+}
+
+section {
+    margin-top: 50px;
+}
+
+#section1 {
+    position: relative;
+    right: 50px;
+}
+
+
+#titre{
+    display: inline;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+#titre:hover {
+    background-color: red;
+}
+
+#logo{
+    vertical-align: middle;
+    height: 100px;
+}
+
+#logo:hover{
+    height: 150px;
+}
+
+section > form > input {
+    /* background-color: blue; */
+}
+
+#pseudo + input {
+    width: 250px;
+}
+
+#formulaire label, #formulaire input {
+    display: block;
+}
+
+@media screen and (max-width: 575px){
+    
+    #formulaire label, #formulaire input {
+        display: inline;
+    }
+}
