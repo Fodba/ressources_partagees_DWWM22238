@@ -3,7 +3,9 @@ var regexCp = new RegExp("^[0-9]{5}$");
 var regexMail = new RegExp("[@]{1}$");
 
 function auMoinsUnCaractere(e){
-    let element = e.target;
+    console.log(e);
+    var element = e.target;
+    console.log(element);
     let valeur = element.value;
     if(!regex1Car.test(valeur)){
         let p = element.parentNode.lastChild.previousSibling;
@@ -41,3 +43,9 @@ contact.addEventListener("blur",auMoinsUnCaractere);
 ville.addEventListener("blur",auMoinsUnCaractere);
 cp.addEventListener("blur",cinqCaractere);
 mail.addEventListener("blur",arobase);
+
+
+
+let formulaire = document.getElementById("formulaire");
+console.log(formulaire);
+// formulaire.addEventListener("submit",fonctionDeVerif);
