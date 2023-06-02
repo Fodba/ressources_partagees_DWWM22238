@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/formulaire.css">
+</head>
+<body>
+    <div id="block_page">
+        <form method="post" action="#">
+            <h3>Vos coordonnées:</h3>
+            <p class="warning">* Ces zones sont obligatoires pour envoyer le formulaire.</p>
+            <div class="champs">
+                <label for="">Société :</label>
+                <input type="text" name="societe" id="societe" >
+                <p class="warning">*</p>
+                <p id="errorNom" class="warning"></p>
+            </div>
+            <div class="champs">
+                <label for="">Personne à contacter :</label>
+                <input type="text" name="contact" id="contact" >
+                <p class="warning">*</p>
+                <p id="errorContact" class="warning"></p>
+            </div>
+            <div class="champs">
+                <label for="">Adresse de l'entreprise :</label>
+                <select multiple name="adresse">
+                </select>
+            </div>
+            <div class="champs">
+                <label for="">Code Postal :</label>
+                <input type="text" name="codePostal" id="cp">
+                <p class="warning">*</p>
+                <p id="errorCp" class="warning"></p>
+            </div>
+            <div class="champs">
+                <label for="">Ville :</label>
+                <input type="text" name="ville" id="ville">
+                <p class="warning">*</p>
+                <p id="errorVille" class="warning"></p>
+            </div>
+            <div class="champs">
+                <label for="">E-mail :</label>
+                <input type="text" name="mail" id="mail">
+                <p class="warning">*</p>
+                <p id="errorEmail" class="warning"></p>
+            </div>
+            <div class="champs">
+                <label for="">Téléphone :</label>
+                <input type="text" name="telephone" >
+            </div>
+            <div class="champs">
+                <div class="label">
+                    <label for="">Séléctionnez l'environnement technique du projet 
+                    </label>
+                    <select>
+                        <option selected value="Choisissez" multiple>Choisissez</option>
+                        <option value="Choisissez">Access</option>
+                        <option value="Choisissez">Java</option>
+                        <option value="Choisissez">Delphi</option>
+                        <option value="Choisissez">Windev</option>
+                        <option value="Choisissez">Visual Basic</option>
+                        <option value="Choisissez">Power Builder</option>
+                        <option value="Choisissez">Internet</option>
+                        <option value="Choisissez">Intranet</option>
+                        <option value="Choisissez">Windows NT</option>
+                        <option value="Choisissez">Unix</option>
+                        <option value="Choisissez">SQL Server</option>
+                        <option value="Choisissez">Oracle</option>
+                        <option value="Choisissez">Autres</option>
+                    </select>
+                </div>
+                <select multiple name="environnement">
+                </select>
+            </div>
+            <div id="boutons">
+                <input type="submit" value="Envoyer">
+                <input type="reset" value="Effacer">
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/formulaire.js"></script>
+</body>
+</html>

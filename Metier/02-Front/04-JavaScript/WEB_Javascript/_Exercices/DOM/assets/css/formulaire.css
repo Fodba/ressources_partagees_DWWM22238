@@ -1,0 +1,49 @@
+#block_page{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+form{
+    text-align: left;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.warning{
+    color: red;
+}
+
+.champs{
+    width: 80%;
+    /* height: 100px; */
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.champs label, .label{
+    width: 30%;
+    display: inline-block;
+}
+.champs input{
+    /* width: 40%; */
+    display: inline-block;
+}
+
+.champs .warning{
+    display: inline-block;
+}
+
+.label select{
+    display: block;
+}
+
+#boutons{
+    text-align: center;
+}
+
+#boutons input{
+    width: 30%;
+    margin: auto;
+}
