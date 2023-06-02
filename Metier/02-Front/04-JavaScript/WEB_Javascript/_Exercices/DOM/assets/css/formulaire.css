@@ -22,12 +22,16 @@ form{
     margin-bottom: 10px;
 }
 
+label, textarea {
+    vertical-align: middle;
+}
+
 .champs label, .label{
     width: 30%;
     display: inline-block;
 }
 .champs input{
-    /* width: 40%; */
+    width: 150px;
     display: inline-block;
 }
 
@@ -37,6 +41,18 @@ form{
 
 .label select{
     display: block;
+}
+
+#adresse{
+    resize: none;
+}
+.select_multiple{
+    width: 150px;
+    /* box-sizing: border-box; */
+}
+
+.select_multiple option{
+    width: 150px;
 }
 
 #boutons{

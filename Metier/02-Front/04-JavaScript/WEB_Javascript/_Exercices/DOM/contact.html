@@ -14,66 +14,69 @@
             <p class="warning">* Ces zones sont obligatoires pour envoyer le formulaire.</p>
             <div class="champs">
                 <label for="">Société :</label>
-                <input type="text" name="societe" id="societe" >
+                <input type="text" name="societe" id="societe" class="inputChamps">
                 <p class="warning">*</p>
-                <p id="errorNom" class="warning"></p>
+                <p id="errorNom" class="warning error"></p>
             </div>
             <div class="champs">
                 <label for="">Personne à contacter :</label>
-                <input type="text" name="contact" id="contact" >
+                <input type="text" name="contact" id="contact" class="inputChamps">
                 <p class="warning">*</p>
-                <p id="errorContact" class="warning"></p>
+                <p id="errorContact" class="warning error"></p>
             </div>
             <div class="champs">
                 <label for="">Adresse de l'entreprise :</label>
-                <select multiple name="adresse">
-                </select>
+                <textarea name="adresse" id="adresse" cols="20" rows="3" class="inputChamps"></textarea>
+                <!-- <select multiple name="adresse" class="select_multiple">
+                    <option></option>
+                </select> -->
             </div>
             <div class="champs">
                 <label for="">Code Postal :</label>
-                <input type="text" name="codePostal" id="cp">
+                <input type="text" name="codePostal" id="cp" class="inputChamps">
                 <p class="warning">*</p>
-                <p id="errorCp" class="warning"></p>
+                <p id="errorCp" class="warning error"></p>
             </div>
             <div class="champs">
                 <label for="">Ville :</label>
-                <input type="text" name="ville" id="ville">
+                <input type="text" name="ville" id="ville" class="inputChamps">
                 <p class="warning">*</p>
-                <p id="errorVille" class="warning"></p>
+                <p id="errorVille" class="warning error"></p>
             </div>
             <div class="champs">
                 <label for="">E-mail :</label>
-                <input type="email" name="mail" id="mail">
+                <input type="email" name="mail" id="mail" class="inputChamps">
                 <p class="warning">*</p>
-                <p id="errorEmail" class="warning"></p>
+                <p id="errorEmail" class="warning error"></p>
             </div>
             <div class="champs">
                 <label for="">Téléphone :</label>
-                <input type="text" name="telephone" >
+                <input type="text" name="telephone" class="inputChamps">
             </div>
             <div class="champs">
                 <div class="label">
                     <label for="">Séléctionnez l'environnement technique du projet 
                     </label>
-                    <select>
-                        <option selected value="Choisissez" multiple>Choisissez</option>
-                        <option value="Choisissez">Access</option>
-                        <option value="Choisissez">Java</option>
-                        <option value="Choisissez">Delphi</option>
-                        <option value="Choisissez">Windev</option>
-                        <option value="Choisissez">Visual Basic</option>
-                        <option value="Choisissez">Power Builder</option>
-                        <option value="Choisissez">Internet</option>
-                        <option value="Choisissez">Intranet</option>
-                        <option value="Choisissez">Windows NT</option>
-                        <option value="Choisissez">Unix</option>
-                        <option value="Choisissez">SQL Server</option>
-                        <option value="Choisissez">Oracle</option>
-                        <option value="Choisissez">Autres</option>
+                    <select id="select_environnement">
+                        <option selected value="Choisissez" multiple >Choisissez</option>
+                        <option value="Access">Access</option>
+                        <option value="Java">Java</option>
+                        <option value="Delphi">Delphi</option>
+                        <option value="Windev">Windev</option>
+                        <option value="Visual">Visual Basic</option>
+                        <option value="PowerBuilder">Power Builder</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Intranet">Intranet</option>
+                        <option value="Windows">Windows NT</option>
+                        <option value="Unix">Unix</option>
+                        <option value="SQL Server">SQL Server</option>
+                        <option value="Oracle">Oracle</option>
+                        <option id="optionAutre" value="Autres">Autres</option>
                     </select>
                 </div>
-                <select multiple name="environnement">
+                <select id="environnement_select" multiple name="environnement" class="select_multiple">
                 </select>
+                <input class="editOption" id="editOption" style="display:none;"></input>
             </div>
             <div id="boutons">
                 <input type="submit" value="Envoyer">
