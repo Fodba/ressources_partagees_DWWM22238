@@ -7,11 +7,12 @@ var regexMail = new RegExp("[@]{1}$");
 
 // FONCTIONS
 function auMoinsUnCaractere(e){
-    // console.log(e);
-    var element = e.target;
-    // console.log(element);
+    // On récupère l'élément HTML qui a déclenché l'événement ainsi que le texte tapé
+    var element = e.target; 
     let valeur = element.value;
+    // On récupère la balise d'affichage du message d'erreur. Ici, c'est la dernière balise du conteneur
     let p = element.parentNode.lastChild.previousSibling;
+    // On affiche un message d'erreur ou non selon que le texte est conforme à la régex ou pas.
     if(!regex1Car.test(valeur)){
         p.innerText = "Vous devez entrer au moins un caractère";
     }
@@ -44,53 +45,60 @@ function arobase(e){
     }
 }
 
-function addEnvironnement(e){
-    let choix = e.target.selectedOptions[0].innerText;
-    e.target
-    if (choix == "Autres"){
-        let editOption = document.getElementById('editOption');
-        editOption.style.display = "block";
-    }
-    else if(choix != "Choisissez"){
-        let option = document.createElement("option");
-        option.setAttribute("value",choix);
-        option.innerText = choix;
-        let select = document.getElementById("environnement_select");
-        select.appendChild(option);
-    }
+function quelleOption(e){
+    console.log(e);
+        // On récupère le texte de l'option qui a été sélectionnée pour déterminer l'action si c'est un élément de la liste ou si c'est une entrée utilisateur.
+        // Les options sont récupérés sous forme d'un HTMLcollection (ou plus simplement sous forme d'un tableau)
+        let choix = e.target.selectedOptions[0].innerText;
+        if (choix == "Autres"){
+            let editOption = document.getElementById('editOption');
+            editOption.style.display = "block";
+        }
+        else if(choix != "Choisissez"){
+            ajoutItem(choix);
+        }
 }
 
-function ajoutItem(e){
-    var editText = editOption.value;
-    if(editText != ""){
-        let environnementSelect = document.getElementById('environnement_select');
-        let optionAutre = document.getElementById('optionAutre');
+
+function ajoutItem(pTexte){
+    if(pTexte != ""){
+        // Création d'une nouvelle option pour le select multiple
         let nouvelleOption = document.createElement('option');
-        nouvelleOption.innerText = editText;
+        nouvelleOption.innerText = pTexte;
+        nouvelleOption.setAttribute("value",pTexte);
+
+        // Récupération du select multiple et ajout de l'option.
+        let environnementSelect = document.getElementById('environnement_select');
         environnementSelect.appendChild(nouvelleOption);
-        e.target.value = "";
-        e.target.style.display = "none";
     }
 }
 
 function fonctionDeVerif(e){
-    e.preventDefrault();
+    e.preventDefault();
 }
 
 function reset(e){
-    e.preventDefault();
-    let champs = document.getElementsByClassName("inputChamps");
+    // Récupération et réinitialisation de tous les champs.
     let select = document.getElementById("environnement_select");
-    for(elt of champs){
-        let champsType = elt.getAttribute("type");
-        let error = elt.parentNode.lastChild.previousSibling;
-        elt.value = "";
-        error.innerHTML = "";
-    };
     select.innerHTML = "";
 }
 
+function saisie(e){
+    let key = e.key;
+    let editOption = document.getElementById('editOption');
+    if(e.target == editOption){
+        if(key == "Enter"){
+            ajoutItem(e.target.value);
 
+            // Réinitialisation du champs "editOption" et du select
+            editOption.value = "";
+            editOption.style.display = "none";
+            let select = document.getElementById("select_environnement");
+            let option = document.getElementById("itemChoix");
+            select.value = option.value;
+        }
+    }
+}
 
 // Eléments du DOM 
 let nom = document.getElementById("societe");
@@ -110,8 +118,10 @@ ville.addEventListener("blur",auMoinsUnCaractere);
 cp.addEventListener("blur",cinqCaractere);
 mail.addEventListener("blur",arobase);
 
-environnement.addEventListener("input",addEnvironnement);
-editOption.addEventListener("blur",ajoutItem);
+// environnement.addEventListener("click",quelleOption);
+environnement.addEventListener("input",quelleOption);
+// editOption.addEventListener("change",ajoutItem);
+editOption.addEventListener("keyup",saisie);
 
 // console.log(formulaire);
 formulaire.addEventListener("reset",reset);
