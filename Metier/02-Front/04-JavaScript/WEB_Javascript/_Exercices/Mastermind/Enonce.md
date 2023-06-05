@@ -30,14 +30,15 @@ Un message indique alors à l'utilisateur qu'il va démarrer une partie de maste
 à partir de là, il devient possible de faire glisser (drag'n'drop) les pions de couleurs vers le plateau de jeu pour faire sa proposition
 ![](assets/img/mastermind_proposition.PNG)
 
-Suite au click sur le bouton vérifier, la proposition du joueur se décale d'un cran vers le bas avec l'affichage du resultat (pion blanc = "mal placé", pion rouge = "bien placé"), le bouton "Vérifier devient inactif sur cette ligne", le nombre d'essai restants se décrémente et la première ligne revient à la normal pour permettre une nouvelle proposition.
+Suite au click sur le bouton vérifier, la proposition du joueur se décale d'un cran vers le bas avec l'affichage du resultat (pion blanc = "mal placé", pion rouge = "bien placé"), le bouton "Vérifier" devient inactif sur cette ligne, le nombre d'essai restants se décrémente et la première ligne revient à la normal pour permettre une nouvelle proposition. 
+**!!! Attention: la vérification ne doit être possible que si la proposition est complète.**
 ![](assets/img/mastermind_resultat.PNG)
 La partie se poursuit ainsi jusqu'à ce que la combinaison soit trouvée ou que le nombre d'essai atteigne 0.
 ![](assets/img/mastermind_fin_partie.PNG)
 
 
 Le bouton annuler permet d'arréter une partie en cours et de revenir à l'écran d'accueil avec le plateau inactif.
-Le bouton Démarrer ne permet de lancer une partie que si aucune partie n'est en cours. si une partie est déjà lancé, demander à l'utilisateur de terminer sa partie ou de l'annuler s'il veut en faire une nouvelle.
+Le bouton Démarrer ne permet de lancer une partie que si aucune partie n'est en cours. Si une partie est déjà lancée, demander à l'utilisateur de terminer sa partie ou de l'annuler s'il veut en faire une nouvelle.
 
 Voici un aperçu possible pour une version mobile:
 ![](assets/img/mastermind_mobile.PNG)
