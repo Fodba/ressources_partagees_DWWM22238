@@ -1,0 +1,175 @@
+/* @fa-font-path:   "../../font-awesome"; */
+
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url("../fonts/Open_Sans/OpenSans-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBoldItalic';
+  src: url("../fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf");
+}
+
+/*****************************/
+body {
+  background-color: #8A8F97;
+  font-family: "OpenSans";
+  position: relative;
+  height: 100%;
+}
+
+div {
+  /*border: 1px solid black;*/
+  min-height: 20px;
+}
+
+img {
+  /*border: 1px solid black;*/
+}
+
+li {
+  /*border: 1px solid white;*/
+}
+
+a {
+  outline: none;
+
+}
+
+a:hover {
+  outline: none;
+}
+
+/********************************/
+.block_page {
+  width: 992px;
+  margin: auto;
+  background-color: #FFFFFF;
+  /* //bottom: -56px;
+  //padding-bottom: (2 * 56px) + 20px; */
+  z-index: 1000;
+  /* //min-height: 100%; */
+  min-height: 208px;
+  position: relative;
+  /* //top: (2 * 56px); */
+  bottom: 0px !important;
+  overflow: auto;
+}
+
+
+.page {
+  width: 760px;
+  margin: auto;
+  position: relative;
+  /*border: 1px solid red;*/
+}
+
+.back {
+  display: block;
+}
+
+.box {
+  border: 1px solid #1A488A;
+  min-width: 220px;
+  min-height: 208px;
+  border-radius: 15px;
+  overflow: hidden;
+
+}
+
+.box .box_top {
+  /* //height: 56px;// + 20px; */
+  background-color: #1A488A;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  font-family: "OpenSans-Bold";
+
+}
+
+.box h2,
+.box h3 {
+  margin-top: 0px;
+}
+
+.box .box_bottom {
+  text-align: center;
+}
+
+.bouton {
+  min-width: 100px;
+  display: inline-block;
+  padding-left: 3px !important;
+  margin-left: 20px;
+  height: 28px;
+  background-color: #1A488A;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: "OpenSans-Bold";
+  line-height: 28px;
+
+}
+
+.bouton a {
+  color: #FFFFFF;
+  text-decoration: none;
+  outline: none;
+}
+
+.bouton:hover {
+  background-color: #F05D1A;
+}
+
+.cercle {
+  border-radius: 25px;
+  background-color: #F05D1A;
+  width: 50px;
+  height: 50px;
+  color: #FFFFFF;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: -(2.2 * 20px);
+  font-family: "OpenSans-Bold";
+
+}
+
+.cercle h4 {
+  line-height: 50px;
+}
+
+.blanc {
+  color: #FFFFFF;
+}
+
+.orange {
+  color: #F05D1A;
+}
+
+.gris {
+  color: #8A8F97;
+}
+
+.bleu {
+  color: #1A488A;
+}
+
+.fond_bleu {
+  background-color: #1A488A;
+}
+
+.line div {
+  display: inline-block;
+  vertical-align: middle;
+}

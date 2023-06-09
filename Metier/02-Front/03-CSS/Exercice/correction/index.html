@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PART'AUDIT - Accueil</title>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="static/css/base.css" />
+    <link rel="stylesheet" href="static/css/home.css"/>
+    
+</head>
+<body>
+
+
+    <div id="header" class="header">
+        <div class="header_content">
+            <div class="logo">
+                <a href="{% url 'part_audit:home' %}">
+                    <img src="static/logos/partaudit_logo_header.png" alt="logo Part'audit" >
+                </a>
+            </div>
+            <div class="header_top">
+                <!--<i class="icon-search icon-2x" id="recherche"></i>-->
+                <input class="" id="recherche"/>
+                <div class="bouton login_button" id="prestataire" data-id="prestataire">
+                    <a href="{% url 'part_audit:inscription' 'action' %}">PRESTATAIRE</a>
+                </div>
+                <div class="bouton login_button" id="entreprise" data-id="entreprise">
+                    <a href="{% url 'part_audit:inscription' 'action' %}">ENTREPRISE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="header_nav" class="header_nav">
+        <div class="nav_menu">
+            <ul class="nav">
+                <li id="home_link" class="nav_item home_item" data-link="#home" data-background="#home_background">
+                    <a href="{% url 'part_audit:home' %}">Accueil</a>
+                </li>
+                <img src="static/images/barre_verticale.gif" class="blank"/>
+                <li id="actu_link" class="nav_item actu_item" data-link="#actu" data-background="#actu_background">
+                    <a href="#actu_background_back">A la une</a>
+                </li>
+                <img src="static/images/barre_verticale.gif" class="blank"/>
+                <li id="about_link" class="nav_item about_item" data-link="#about" data-background="#about_background">
+                    <a href="#about_background_back">Qui sommes nous?</a>
+                </li>
+                <img src="static/images/barre_verticale.gif" class="blank"/>
+                <li id="workflow_link" class="nav_item workflow_item" data-link="#workflow" data-background="#workflow_background">
+                    <a href="#workflow_background_back">Comment ça marche?</a>
+                </li>
+                <img src="static/images/barre_verticale.gif" class="blank"/>
+                <li id="contact_link" class="nav_item contact_item" data-link="#contact" data-background="#contact_background">
+                    <a href="#contact_background_back">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    
+
+    <div class="block_page">
+    
+    
+        <div id="home_background_back" class="back background"></div>
+        <div id="home_background" class="background">
+            <div>
+            <img src="static/images/accueil2.jpg"/></div>
+        </div>
+        <section id="home" class="page">
+            <div class="home_content">
+                <div class="box_content">
+                    <div class="home_box box b1">
+                        <div class="box_top">
+                            <h3>PROPOSEZ</h3>
+                            <h4>une prestation</h4>
+                        </div>
+                        <div class="box_bottom">
+                            <div class="box_img">
+                            </div>
+                            <button class="box_bouton">En savoir plus</button>
+                        </div>
+                    </div>
+                    <div class="home_box box b2">
+                        <div class="box_top">
+                            <h3>RECHERCHEZ</h3>
+                            <h4>un audit interne</h4></div>
+                        <div class="box_bottom">
+                            <div class="box_img">
+                            </div>
+                            <button class="box_bouton">En savoir plus</button>
+                        </div>
+                    </div>
+                    <div class="home_box box b3">
+                        <div class="box_top">
+                            <h3>ACCEDEZ</h3>
+                            <h4>à nos autres prestations</h4></div>
+                        <div class="box_bottom">
+                            <div class="box_img">
+                            </div>
+                            <button class="box_bouton">En savoir plus</button>
+                        </div>
+                    </div>
+                    <h2 class="box_content_text_1 bleu">Vos audits internes <span class="orange">&</span> formations </h2>
+                    <h1 class="box_content_text_2 orange">EN UN CLIC!</h1>
+                </div>
+                <div class="chevron">
+                    <img class="chevron_gauche" src="static/images/chevron_gauche.png"/>
+                    <img class="chevron_droite" src="static/images/chevron_droite.png"/>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer">
+        <div class="footer">
+            <div>
+                <span>Suivez-nous!</span>
+                <div class="social">
+            </div>
+               <map name="ma_map" id="id_map">
+                  <area shape="rect" coords="0,0,30,30" href="http://www.facebook.com" alt="facebook"/>
+                  <area shape="rect" coords="30,0,60,30" href="http://www.linkedin.com" alt="vers a"/>
+                  <area shape="rect" coords="60,0,90,30" href="http://www.google.com" alt="vers a"/>
+                  <area shape="rect" coords="90,0,120,30" href="http://www.twitter.com" alt="vers a"/>
+               </map>
+                <img class="social_logo" usemap="#ma_map" src="static/images/social_footer.png"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

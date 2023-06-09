@@ -1,0 +1,187 @@
+@import 'common.less';
+
+
+.header {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  /* //position: fixed; */
+  width: 100%;
+  top: 0px;
+  z-index: 1100;
+}
+
+.header_content {
+  width: 992px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo,
+.header_top {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header_top {
+  margin-left: 240px;
+}
+
+#recherche {
+  margin-left: 20px;
+  width: 220px;
+}
+
+.header_top #prestataire {
+  background-color: #F05D1A;
+  font-size: 0.8em;
+}
+
+#entreprise {
+  background-color: #1A488A;
+  font-size: 0.8em;
+}
+
+
+.header_nav {
+  background-color: #1A488A;
+  color: #FFFFFF;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  width: 100%;
+  /* //top: (100px + 8); */
+  z-index: 1100;
+
+}
+
+.nav_menu {
+  width: 1000px;
+  margin: auto;
+
+}
+
+.nav {
+  margin-left: 360px;
+  height: 50px;
+  padding-bottom: 10px;
+
+
+
+}
+
+.nav .blank {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.nav img {
+  position: relative;
+  top: -10px;
+}
+
+.nav .nav_item {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px !important;
+  /* height: 95px; */
+  margin-left: 10px;
+  /* padding-top: 10px; */
+  text-align: center;
+  font-family: "OpenSans";
+  /* position: relative;
+        top: -10px; */
+}
+
+.nav .nav_item a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0px;
+  background-color: #1A488A;
+  outline: none;
+}
+
+.nav .nav_item p {
+  line-height: 15px;
+}
+
+.nav .nav_item:hover {
+  background-color: #1A488A;
+}
+
+.nav .nav_item:hover a {
+  background-color: #1A488A;
+}
+
+.home_item {
+  margin-left: 0px;
+  padding-top: 12px;
+}
+
+.actu_item {
+  padding-top: 12px;
+}
+
+.about_item {
+  padding-top: 5px;
+}
+
+.workflow_item {
+  padding-top: 5px;
+}
+
+.contact_item {
+  padding-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+#footer {
+  background-color: #1A488A;
+  color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  bottom: 0px;
+  z-index: 1100;
+}
+
+.footer {
+  width: 992px;
+  margin: auto;
+  /* //height: 100px; */
+  padding-left: 20px;
+  text-align: center;
+}
+
+.social {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social_logo {
+  margin: 0px !important;
+  width: 120px;
+}
+
+#footer a {
+  color: #FFFFFF;
+  /* text-underline: none; */
+  text-decoration: none;
+  outline: none;
+}
+
+#footer a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  outline: none;
+}
