@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="block_page">
+        <header id="titre">
+            <h1>MASTERMIIND</h1>
+        </header>
+        <section id="ecran">
+            <section id="moniteur">
+                <section id="menu">
+                    <button id="demarrer" class="gameButton">DEMARRER</button>
+                    <button id="annuler" class="gameButton">ANNULER</button>
+                </section>
+                <section id="infos">
+                    <p id="infoLabel">Nombre d'essai(s) restant(s)</p>
+                    <p id="essais"></p>
+                </section>
+                <section id="pions">
+                    <div draggable="true" id="pionRouge" class="pionRouge pionItem"></div>
+                    <div draggable="true" id="pionVert" class="pionVert pionItem"></div>
+                    <div draggable="true" id="pionBleu" class="pionBleu pionItem"></div>
+                    <div draggable="true" id="pionJaune" class="pionJaune pionItem"></div>
+                    <div draggable="true" id="pionOrange" class="pionOrange pionItem"></div>
+                    <div draggable="true" id="pionViolet" class="pionViolet pionItem"></div>
+                    <div draggable="true" id="pionNoir" class="pionNoir pionItem"></div>
+                    <div draggable="true" id="pionBlanc" class="pionBlanc pionItem"></div>
+                </section>
+            </section>
+            <section id="jeu">
+                
+            </section>
+        </section>
+    </div>
+    <script src="assets/js/fonctions.js"></script>
+    <script src="assets/js/fonctionsEvent.js"></script>
+    <script src="assets/js/partie.js"></script>
+</body>
+</html>

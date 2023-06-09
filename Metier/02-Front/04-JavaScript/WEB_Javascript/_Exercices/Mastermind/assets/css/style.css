@@ -1,0 +1,360 @@
+body{
+    background-color: aqua;
+}
+
+#block_page{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 50%;
+    margin: auto;
+    padding: 20px 0;
+    border: 1px solid black;
+    background-color: maroon;
+}
+
+#titre{
+    order: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 200%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: red;
+    /* display: block; */
+    /* height: 50px !important; */
+}
+#ecran{
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div{
+    border: 1px solid black;
+}
+
+section{
+    vertical-align: top;
+    flex-grow: 0;
+}
+
+#moniteur{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+#jeu{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(5, 8, 199); */
+    width: 70%;
+    background-color: grey;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#menu{
+    order: 1;
+    /* border: 1px solid blue; */
+}
+
+#infos{
+    order: 3;
+    text-align: center;
+    color: white;
+    /* margin-top: 50px;     */
+}
+
+#pions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    order: 2;
+    height: 100px;
+    margin: 15px 0;
+}
+
+.gameButton{
+    display: block;
+    width: 100%;
+    height: 50px; 
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.gameButton:hover{
+    border-width: 1px 3px 3px 1px;
+    color: white;
+    font-weight: bold;
+}
+
+#demarrer{
+    background-color: green;
+}
+
+#annuler{
+    background-color: red;
+}
+
+#infoLabel{
+    background-color: black;
+    margin: 0;
+}
+
+#essais{
+    padding-top: 25px;
+    margin: 0;
+    font-size: 300%;
+    background-color: black;
+}
+
+.pionItem{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.line{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#combinaison{
+    order: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 60%; */
+    border: 1px solid black;
+    background-color: rgb(145, 38, 38);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50px;
+}
+
+.plateau{
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    border-width: 0  1px 0 0;
+    border-style: solid;
+    border-color: black;
+    margin: 5px;
+}
+
+.result{
+    order: 2;
+    align-self: flex-end;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+    margin: 5px;
+}
+
+.verification{
+    order: 3;
+    width: 15%;
+}
+
+.dejaVerifie{
+    background-color: grey;
+}
+
+.cache{
+    visibility: hidden;
+}
+
+
+
+.propoItem{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.pionHorsPartie{
+    background-color: rgb(100,100,100);
+}
+
+.pionVierge{
+    background-color: rgb(200,200,200);
+}
+
+
+.resultItem{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.pionBlanc{
+    background-color: white;
+}
+
+.pionRouge{
+    background-color: red;
+}
+
+.pionVert{
+    background-color: green;
+}
+
+.pionBleu{
+    background-color: blue;
+}
+
+.pionJaune{
+    background-color: yellow;
+}
+
+.pionOrange{
+    background-color: orange;
+}
+
+.pionViolet{
+    background-color: violet;
+}
+
+.pionNoir{
+    background-color: black;
+}
+
+
+.pionCombi{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: rgb(89, 104, 98);
+}
+
+
+
+
+
+@media only screen and (max-width: 768px){
+    /* body{
+        background-color: maroon;
+    } */
+
+    #block_page{
+        width: 100%;
+    }
+
+    #titre{
+        font-size: 100%;
+    }
+
+    button{
+        font-size: 50%;
+    }
+
+    #ecran{
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    #jeu{
+        width: 60%;
+    }
+
+    #moniteur{
+        /* width: 100%; */
+        /* flex-direction: row; */
+        justify-content: space-around;
+        align-content: space-around;
+        align-items: center;
+        /* height: 50px; */
+        margin-bottom: 15px;
+        border-width: 0 0 2px 0;
+        border-style: solid;
+        border-color: black;
+    }
+
+    #menu button{
+        margin: 5px 0;
+    }
+
+    #infos{
+        margin-top: 15px;
+    }
+
+    #pions{
+        width: 75%;
+        flex-direction: row;
+    }
+    #infoLabel{
+        font-size: 75%
+    }
+
+    #essais{
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 300%;
+        height: 75px;
+    }
+    
+    .gameButton{
+        /* width: 50px; */
+        height: 25px;
+    /* margin-top: 25px;
+    margin-bottom: 25px; */
+    }
+    
+
+    .pionItem{
+        width: 20px;
+        height: 20px;
+    }
+
+    .plateau{
+        width: 65%;
+        margin: 5px 0;
+    }
+    
+    .result{
+        order: 2;
+        width: 20%;
+        margin: 5px 0;
+        padding: 0 2px;
+    }
+    .propoItem{
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+    }
+    
+    .resultItem{
+        width: 5px;
+        height: 5px;
+        border-radius: 50px;
+    }
+
+    /* .verification{
+        order: 3;
+    } */
+}
