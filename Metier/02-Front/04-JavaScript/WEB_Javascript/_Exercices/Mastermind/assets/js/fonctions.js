@@ -14,6 +14,7 @@ function initPartie(message = true){
         combinaison.appendChild(combiItem);
     }
     jeu.appendChild(combinaison);
+    // coteGauche.coteDroit
 
     // Création de la première ligne
     let ligne = document.createElement("section");
@@ -81,7 +82,6 @@ function revelerCombinaison(pCombinaison){
         pion.setAttribute("class", classe);
     }
 }
-
 
 function verifierBienPlaces(pCombinaisons,pPropositions) { 
     let eBienPlaces = 0;

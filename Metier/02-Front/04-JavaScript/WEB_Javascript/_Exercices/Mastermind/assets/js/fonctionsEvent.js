@@ -16,6 +16,7 @@ function dropPion(e) {
 
 function verifCombi(e) {
     let ligne = e.target.parentNode;
+    console.log(e.target.parentNode);
     let propoElement = ligne.querySelectorAll(".propoItem");
     let resultItem = ligne.querySelectorAll(".resultItem");
     let propoCombi = [];
@@ -63,4 +64,10 @@ function verifCombi(e) {
             initLigneActive();
         }
     }
+}
+
+
+function verifTarget(e){
+    console.log(e.altKey);
+    console.log(e);
 }

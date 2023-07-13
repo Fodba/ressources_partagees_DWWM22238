@@ -50,7 +50,7 @@ function continuerPartie(){
     if (sChoixUtilisateur.toLowerCase() == "o"){
         return true;
     }
-    else{
+    else {
         return false;
     }
 }
@@ -59,7 +59,11 @@ function continuerPartie(){
 function genererCombinaisonAleatoire(pMin, pMax) {
     const tab = [];
     for (let i = 0; i < 4; i++) {
-        tab[i] = Math.floor(Math.random() * (pMax - pMin + 1) + pMin);
+        let randomNumber;
+        do {
+            randomNumber = Math.floor(Math.random() * (pMax - pMin + 1) + pMin);
+        } while (tab.includes(randomNumber));
+        tab[i] = randomNumber;
         console.log(tab[i]);
     }
     return tab;
@@ -80,7 +84,7 @@ function saisirCombinaison(){
 function verifierBienPlaces(pCombinaisons,pPropositions) { // !!! Attention! Lorsque l'on passe un tableau en paramètre à une fonction, ce n'est pas une copie de ce que contient le tableau qui est envoyé à la fonction mais bien le tableau lui même (contrairement aux variables). Toute modification apportée au tableau DANS la fonction sera répércuté sur le tableau EN DEHORS de la fonction.
     let eBienPlaces = 0;
     // On parcourt chaque case des propositions
-    for (var i = 0; i < pPropositions.length; i++) {
+    for (let i = 0; i < pPropositions.length; i++) {
         // Si le chiffre de la proposition est le même que celui de la combinaison
         if (pPropositions[i] == pCombinaisons[i]){
             eBienPlaces++;
@@ -94,7 +98,7 @@ function verifierBienPlaces(pCombinaisons,pPropositions) { // !!! Attention! Lor
 function verifierMalPlaces(pCombinaisons,pPropositions) {
     let eMalPlaces = 0;
     // On parcourt le tableau des propositions
-    for (var i = 0; i < pPropositions.length; i++) {
+    for (let i = 0; i < pPropositions.length; i++) {
         // On s'assure que la case actuelle ne contient pas une valeur hors-limite
         if(pPropositions[i] >= 1 && pPropositions[i] <= 4)
             // on vérifie si le chiffre de la case actuelle est présent dans le tableau des combinaisons
@@ -111,14 +115,14 @@ function verifierMalPlaces(pCombinaisons,pPropositions) {
 }
 
 // Gestion d'une manche (une proposition jusqu'à la découverte de la combinaison ou l'atteinte du nombre de coups autorisés)
-function jouerManche(pCombinaison, pNbreCoups){
-    let bGagne = false;
+function jouerManche(pCombinaison, pNbreCoups) {
     let eTentatives = 0;
     let eBienPlaces = 0;
     let eMalPlaces = 0;
+    let partieGagnee = false; // Nouvelle variable pour indiquer si la partie est gagnée
 
-    // Boucle répétant chaque tentatives de deviner la combinaison
-    do{
+    // Boucle répétant chaque tentative de deviner la combinaison
+    do {
         // Copie du tableau de combinaison pour faire les vérifications
         let tCombinaison = pCombinaison.slice();
         let tPropositions = saisirCombinaison();
@@ -128,52 +132,47 @@ function jouerManche(pCombinaison, pNbreCoups){
         tPropositions2 = tPropositions.slice();
 
         // Vérification des nombres bien placés (en passant les copies de nos tableaux)
-        eBienPlaces = verifierBienPlaces(tCombinaison,tPropositions2);
+        eBienPlaces = verifierBienPlaces(tCombinaison, tPropositions2);
 
         // Vérification des nombres corrects mais mal placés (en passant les copies de nos tableaux modifiés par la vérification des chiffres bien placés)
-        eMalPlaces = verifierMalPlaces(tCombinaison,tPropositions2);
+        eMalPlaces = verifierMalPlaces(tCombinaison, tPropositions2);
 
         console.log("Nombre de chiffres bien placés: " + eBienPlaces);
         console.log("Nombre de chiffres mal placés: " + eMalPlaces);
         console.log("Il vous reste " + (pNbreCoups - eTentatives) + " tentatives");
-    } while (eTentatives < pNbreCoups && eBienPlaces < tCombinaison.length);
-    
-    // Comme on ne peut renvoyer qu'un seul résultat, on renvoie le nombre de tentatives qui indiquera le résultat de la partie.
+
+        if (eBienPlaces === tCombinaison.length) {
+            partieGagnee = true; // Indiquer que la partie est gagnée
+        }
+    } while (eTentatives < pNbreCoups && !(partieGagnee)); // Condition pour continuer la boucle
+
+    if (partieGagnee) {
+        console.log("Vous avez gagné en " + eTentatives + " tentatives.");
+    } else {
+        console.log("Vous n'avez pas trouvé la combinaison qui était : " + pCombinaison);
+    }
+
     return eTentatives;
 }
-
-let bContinuer = false;
-let tCombinaison = [];
-
-console.log("Bienvenue au jeu du Mastermind");
-console.log("Avant de démarrer votre partie, vous allez pouvoir la configurer");
 
 // Boucle principale du programme.
 do {
     let eNbreCoups = SaisirValeurNumerique("Combien de tentatives sont autorisées pour chaque manche?");
     let eNbreManche = SaisirValeurNumerique("Combien de manches voulez-vous jouer?");
-    let eTentatives = 0;
 
     // Boucle de gestion des manches.
-    do{
+    do {
         console.log("Nouvelle manche");
         // Réinitialisation de la combinaison à chaque début de manche
         // tCombinaison = [4,2,1,3];
-        tCombinaison = genererCombinaisonAleatoire(1,4);
+        let tCombinaison = genererCombinaisonAleatoire(1, 4);
         console.log(tCombinaison);
 
         // Jeu
-        eTentatives = jouerManche(tCombinaison,eNbreCoups);
-        
-        // si le nombre de tentatives est inférieur au nombre de coups autorisés, c'est qu'on a trouvé la combinaison.
-        if (eTentatives < eNbreCoups){
-            console.log("Vous avez gagné en " + eTentatives + " tentatives.");
-        }
-        else{
-            console.log("vous n'avez pas trouvé la combinaison qui était : " + tCombinaison);
-        }
+        jouerManche(tCombinaison, eNbreCoups);
+
         eNbreManche--;
     } while (eNbreManche > 0);
-    // Demande de nouvelle partie
+
     bContinuer = continuerPartie();
 } while (bContinuer);

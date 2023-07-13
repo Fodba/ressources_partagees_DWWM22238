@@ -121,6 +121,7 @@ mail.addEventListener("blur",arobase);
 // environnement.addEventListener("click",quelleOption);
 environnement.addEventListener("input",quelleOption);
 // editOption.addEventListener("change",ajoutItem);
+let editOption = document.getElementById("editOption");
 editOption.addEventListener("keyup",saisie);
 
 // console.log(formulaire);

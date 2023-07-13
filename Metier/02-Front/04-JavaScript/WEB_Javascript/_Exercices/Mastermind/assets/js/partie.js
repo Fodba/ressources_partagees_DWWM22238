@@ -41,6 +41,8 @@ function annulerPartie(){
     }
 }
 
+document.addEventListener('click',verifTarget);
+
 
 // demarrerPartie();
 
