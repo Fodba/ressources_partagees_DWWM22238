@@ -27,8 +27,8 @@ CREATE TABLE Orders(
 CREATE TABLE Category (
     cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cat_label VARCHAR(50) NOT NULL,
-    cat_sup_id INT NOT NULL,
-    CONSTRAINT FK_CATEGORIES_CUSTOMERS FOREIGN KEY (cat_sup_id) REFERENCES Category(cat_id)
+    cat_parent_id INT NOT NULL,
+    CONSTRAINT FK_CATEGORY_CATEGORY FOREIGN KEY (cat_parent_id) REFERENCES Category(cat_id)
 )
 
 
