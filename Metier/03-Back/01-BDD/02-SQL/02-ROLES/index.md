@@ -63,7 +63,7 @@ Le bon processus de gestion des utilisateurs, rôles et privilèges est le suiva
 
 ## Utilisation en PHP
 
-> Important : il ne faut pas confondre les utilisateurs SQL de votre base/serveur avec ceux de votre application gérés par des sessions.  
+> Important : il ne faut pas confondre les utilisateurs SQL de votre base/serveur avec ceux de votre application gérés par des sessions.
 
 En PHP, l'utilisateur sera indiqué dans la chaîne de connexion <abbr title="Data Source Name">DSN</abbr> de PDO.
 
