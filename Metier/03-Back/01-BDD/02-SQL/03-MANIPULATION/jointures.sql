@@ -1,0 +1,4 @@
+-- 1. Afficher tous les clients français.
+-- 2. Afficher tous les employés du département 'Distribution'
+-- 3. Afficher tous les produits de la gamme 'Parasols'
+-- 4. Afficher toutes les commandes des clients canadiens.
