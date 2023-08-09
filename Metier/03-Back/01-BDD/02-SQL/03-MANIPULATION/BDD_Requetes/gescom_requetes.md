@@ -56,24 +56,44 @@ version 2
 
 13. Combien y-a-t-il de clients canadiens ? Afficher les résultats dans une colonne intitulée 'Nb clients Canada'. 
 
+![](images/correction/gescom_requetes13.PNG)
+
 14. Quel produit marche le mieux ?
+
+![](images/correction/gescom_requetes14.PNG)
 
 15. Quelle est la plus grande quantité commandée pour un seul produit et quel est ce produit ?   
 
+![](images/correction/gescom_requetes15.PNG)
+
 16. Afficher le détail des commandes de 2020.
+
+![](images/correction/gescom_requetes16-1.PNG)
+
+![](images/correction/gescom_requetes16-2.PNG)
 
 17. Afficher les coordonnées des fournisseurs pour lesquels des commandes ont été passées.
 
+![](images/correction/gescom_requetes17.PNG)
+
 18. Quel est le chiffre d'affaires de 2020 ?
+
+![](images/correction/gescom_requetes18.PNG)
 
 19. Quel est le panier moyen ?
 
-20. Où le chiffre d'affaires à l'export est-il le plus élevé ?  
+![](images/correction/gescom_requetes19.PNG)
+
+20. Où le chiffre d'affaires à l'export est-il le plus élevé ?
+
+![](images/correction/gescom_requetes20.PNG)  
 
 21. Lister le total de chaque commande par total décroissant (Afficher numéro de commande, date, total et nom du client).
+
+![](images/correction/gescom_requetes21.PNG)
 
 22. La version 2020 du produit _barb004_ s'appelle désormais _Camper_ et, bonne nouvelle, son prix subit une baisse  de 10%.
 
 23. L'inflation en France en 2019 a été de 1,1%, appliquer cette augmentation à la gamme de parasols.
 
-24. Supprimer les produits non vendus de la catégorie "Tondeuses électriques" (ces produits sont : 36, 37 et 41 de la catégorie 9). 
+24. Supprimer les produits non vendus de la catégorie "Tondeuses électriques" (ces produits sont : 36, 37 et 41 de la catégorie 9).
