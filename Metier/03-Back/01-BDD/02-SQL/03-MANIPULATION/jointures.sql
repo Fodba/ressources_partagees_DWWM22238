@@ -34,3 +34,8 @@ WHERE countries.cou_name = "Canada";
 
 
 -- 5. Afficher les catégorie et leur catégorie parente.
+
+SELECT enfant.cat_name as "catégorie enfant", parent.cat_name as "catégorie parente"
+FROM categories as enfant
+JOIN categories as parent
+ON parent.cat_id = enfant.cat_parent_id;
