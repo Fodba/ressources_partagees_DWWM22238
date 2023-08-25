@@ -101,11 +101,13 @@ on pro_id = ode_pro_id) as table2;
 -- 12. Lister les commandes dont le total est inférieur à 100 €.
 
 SELECT *
-from (SELECT ord_id, sum(ode_unit_price) AS total
-FROM orders
-JOIN orders_details
-ON ord_id = ode_ord_id
-GROUP BY ord_id) as result
+from (
+   SELECT ord_id, sum(ode_unit_price) AS total
+   FROM orders
+   JOIN orders_details
+   ON ord_id = ode_ord_id
+   GROUP BY ord_id
+) as result
 WHERE result.total < 100;
 
 
@@ -207,9 +209,40 @@ GROUP BY ord_id
 ORDER BY cus_lastname;
 
 -- 22. La version 2020 du produit _barb004_ s'appelle désormais _Camper_ et, bonne nouvelle, son prix subit une baisse  de 10%.
+UPDATE products
+SET pro_ref = "Camper", pro_price = pro_price - (pro_price * 10)/100
+WHERE pro_ref = "barb004";
 
 -- 23. L'inflation en France en 2019 a été de 1,1%, appliquer cette augmentation à la gamme de parasols.
+UPDATE products p
+JOIN categories c on p.pro_cat_id = c.cat_id
+SET p.pro_price = p.pro_price * 1.1
+WHERE cat_name = "parasols";
+
+
+UPDATE products
+SET pro_price = pro_price * 1.011
+WHERE pro_cat_id = (
+   SELECT cat_id
+   FROM categories
+   WHERE cat_name = "Parasols";
+) 
+
+UPDATE products
+SET pro_price = pro_price * 1.011
+WHERE pro_cat_id IN (
+   SELECT cat_id
+   FROM categories
+   WHERE cat_name = "Parasols";
+) 
 
 -- 24. Supprimer les produits non vendus de la catégorie "Tondeuses électriques" (ces produits sont : 36, 37 et 41 de la catégorie 9). 
-
-
+DELETE products
+FROM products
+JOIN categories
+ON products.pro_cat_id = categories.cat_id
+WHERE categories.cat_name = 'Tondeuse électriques'
+AND products.pro_id NOT IN (
+   SELECT ode_pro_id
+   FROM orders_details
+);
