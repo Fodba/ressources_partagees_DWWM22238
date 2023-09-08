@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>La P.O..O. en PHP | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+		
+		.slides section kbd 
+		{
+		    font-family : "Courier New";
+			font-size: 30px;
+		}
+		
+		/* Non utilisé dans cette page 
+		mais à conserver pour d'autres Reveal */
+		.span1 {
+			color: red;
+			font-weight: bold;
+		}
+
+        .span2 {
+			color: yellow;
+			font-weight: bold;
+		}	
+
+        .span3 {
+			color: #00CED1;
+			font-weight: bold;
+		}	
+		
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-background="#87bd26">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA" class="stretch">				 					
+				</section>		 
+				<section data-background="#87bd26">
+					<h1>Programmation Orientée Objet (en PHP)</h1>					
+    			</section>
+				<section data-background="#87bd26">
+					<h1>Programmation procédurale</h1>
+					<ul>
+						<li>On code par étapes, en suivant un ordre</li>
+						<li class="fragment">Lisibilité, maintenabilité et sécurité faibles</li>		
+					</ul>							
+				</section>				 
+				<section data-background="#87bd26">
+					
+						<h1>Programmation Orientée Objet</h1>
+						<ul>
+							<li>Un paradigme = une façon de penser</li>
+							<li class="fragment">On pense "objet" : tout élément est un objet</li>	                              		
+						</ul>							
+					</section>					
+                </section>				
+				  <section data-background="#87bd26">
+					<h1>Un objet ?</h1>
+					<ul>
+						<li>Un objet concret, que l'on peut toucher (tangible) : une chaise, un PC, une voiture...</li>
+						<li class="fragment">Quelque chose de plus 'abstrait' (intangible) : une personne, un fichier, une connexion BDD...</li>	
+						<li class="fragment">Un objet est défini par un ensemble de propriétés, qui le distingue des autres objets</li>
+						<li class="fragment">Un objet est défini par des comportements, actions qui modifient son état</li>	
+					</ul>
+				</section>	
+				<section data-background="#87bd26">
+					<h1>Exemple 1 : une voiture</h1>
+					<ul>
+						<li>Propriétés : marque, modèle, immatriculation, kilomètres...</li>
+						<li class="fragment">Comportements : rouler, freiner, réviser...</li>							
+					</ul>
+				</section>	
+				<section data-background="#87bd26">
+					<h1>Exemple 2 : une personne (client d'un site)</h1>
+					<ul>
+						<li>Propriétés : nom, prénom, n° client, adresse, téléphone, login...</li>
+						<li class="fragment">Comportements : créer un compte, se connecter, commander...</li>							
+					</ul>
+				</section>	
+
+                <!-- la classe -->				
+			    <section data-background="#87bd26">		
+                     <section data-background="#87bd26">							
+						<h1>La classe</h1>
+						<ul>
+							<li>= Le moule dans lequel on fabrique un objet</li>
+							<li class="fragment">Regroupe les propriétés et les comportements de l'objet</li>
+							<li class="fragment">Propriétés = <b>attributs</b></li>
+							<li class="fragment">Comportements = <b>méthodes</b></li>
+							
+						</ul>		
+					</section>		
+					
+					<section data-background="#87bd26">
+						<h1>La classe : exemple PHP</h1>
+						<p>Déclaration d'une classe nommée 'Vehicule', fichier 'vehicule.class.php'</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+							class Vehicule 
+							{   
+							     // [ CODE ] 							   
+							} 
+                        	</code>
+					    </pre>				
+					</section>		
+					<section data-background="#87bd26">
+						<h1>Attributs</h1>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+							class Vehicule 
+							{   
+							    private $_marque;
+                                private $_modele;
+                                private $_immat;
+                                private $_nbKm;	
+
+                                // [ CODE ]								
+							} 
+                        	</code>
+					    </pre>				
+					</section>				
+					<section data-background="#87bd26">
+						<h1>Attributs</h1>
+<pre>
+<code class="hljs" data-trim contenteditable>
+// Fichier vehicule.class.php
+							
+class Vehicule 
+{   
+    private $_marque;
+    private $_modele;
+	...
+                                
+	// Méthode 'rouler'
+	public function rouler() 
+    {
+	    // [ CODE ]			   
+    }   	
+
+    // Méthode 'freiner'
+	public function freiner() 
+    {
+	    // [ CODE ]			   
+    }   				 								
+} 	
+</code>
+</pre>				
+					</section>		
+				</section>		
+				<!-- fin la classe -->		
+							
+				  <section data-background="#87bd26">
+					<h1>L'instanciation</h1>
+					<ul>
+						<li>Une instance est une occurrence d'une classe.</li>
+						<li class="fragment">Paul possède un Porsche Cayenne, version GTS, couleur rouge, achetée en 2018, qui a un numéro de série unique (ce qui est le cas d'une grande majorité de produits manufacturés), par exemple 1234.</li>
+                        <li class="fragment">Pierre possède exactement le même modèle que Paul, de couleur rouge et achetée en 2018 aussi; ce qui la distingue de celle de Paul ce sera un numéro de série différent (par exemple 7856).</li>								
+                        <li class="fragment">Une ligne dans une table de BDD est une instance (différenciée par la clé primaire).</li>	
+                    </ul>		
+				</section>	
+
+				 <section data-background="#87bd26">
+					<h1>L'instanciation</h1>
+					<ul>
+                       <li>Les voitures de Pierre et de Paul seront donc 2 instances différentes de la classe voiture. Elles ont été fabriquées dans un même "moule" (la chaîne d'assemblage d'une même usine) = ce moule est la classe.</li>
+				   </ul>		
+				</section>	
+				<section data-background="#87bd26">
+					<h1>L'instanciation : exemple</h1>
+<pre>
+<code class="hljs" data-trim contenteditable>
+// Fichier index.php
+						
+// Chargement de la classe 						
+require "vehicule.class.php"; 
+						
+// Instanciation ou appel de la classe
+$oVehicule = new Vehicule();
+</code>
+</pre>				
+				</section>		
+	            <section data-background="#87bd26">
+					<h1>Visibilité</h1>
+					<ul>
+						<li>Un droit d'accès aux méthodes et propriétés</li>
+						<li class="fragment">Sûreté de programmation</li>
+						<li class="fragment"><code>public</code> : tout le code a accès</li>		
+                        <li class="fragment"><code>private</code> : seule la classe a accès</li>
+						<li class="fragment"><code>protected</code> : accès pour la classe mère + fille(s)</li>								
+					</ul>		
+				</section>				 
+				<section data-background="#87bd26">
+					<h1>Les 3 principes de la P.O.O.</h1>
+					<ul>
+						<li class="fragment">Encapsulation</li>
+						<li class="fragment">Héritage</li>		
+						<li class="fragment">Polymorphisme</li>		
+					</ul>						
+				</section>
+				<section data-background="#87bd26">
+					<h1>Encapsulation</h1>
+					<ul>
+						<li>Désigne le fait que le code est regroupé dans une seule entité logique, la classe</li>						
+					</ul>						
+				</section>
+				<section data-background="#87bd26">
+					<h1>L'héritage</h1>
+					<ul>
+						<li>Un objet (enfant) peut hériter (dériver) des propriétés et méthodes d'un autre objet (parent)</li>
+						<li class="fragment">L'objet enfant peut ainsi définir des propriétés/méthodes spécifiques <b>en plus</b> de celles du parent</li>		
+                        <li class="fragment">L'héritage se traduit par "l'objet enfant est une sorte de l'objet parent" (spécialisation)</li>		
+                        <li class="fragment">En PHP, l'héritage est spécifié par le mot-clé <code>extends</code></li>						
+					</ul>		
+				</section>
+				<section data-background="#87bd26">
+					<h1>L'héritage</h1>
+					<p>En PHP, l'héritage est indiqué par le mot-clé <code>extends</code> :</p>
+					<pre>
+<code class="hljs" data-trim contenteditable>
+// Fichier voiture.class.php
+							
+class Voiture extends Vehicule 
+{   
+    // [ CODE ]			      				 								
+} 	
+</code>
+</pre>				
+				</section>
+				
+				<section data-background="#87bd26">
+					<h1>L'héritage</h1>
+					<ul>
+						<li>Un classe mère peut avoir plusieurs classes filles</li>
+						<li class="fragment">Exemple : classe mère Vehicule pourrait avoir pour filles Voiture, Camion, Moto...</p>
+						<li class="fragment">L'objet enfant peut ainsi définir des propriétés/méthodes spécifiques <b>en plus</b> de celles du parent.</li>		
+                        <li class="fragment">Héritage simple : une classe fille ne peut hériter que d'une <b>seule</b> classe mère (PHP).</li>
+                    	<li class="fragment">Héritage multiple possible dans certains langages (C++, Python...) mais complexe.</li>							
+					</ul>		
+				</section>
+				  <section data-background="#87bd26">
+					<h1>Le polymorphisme</h1>
+					<ul>
+						<li>Méthodes de mêmes noms peuvent exécuter des opérations différentes.</li>	
+                        <li>Une méthode "avancer" dans la classe mère A.</li>
+                        <li>Une seconde méthode "avancer" dans la classe fille B héritant de la classe A.</li>												
+					</ul>		
+				</section>			
+				<section data-background="#87bd26">
+					<h1>Exemple</h1>
+					<img src="images/heritage.png" alt="Schéma héritage" class="stretch">				 					
+				</section>			
+				 <section data-background="#87bd26">
+					<h1>Exemples</h1>
+                    <p>cf. répertoire code_php_exemples</p> 					
+     			</section>				
+                <section data-background="#87bd26">
+					<h1>Avantages de la P.O.O.</h1>
+					<ul>
+						<li>Code mieux structuré : tout est regroupé dans un même fichier</li>
+						<li class="fragment">Principes de réutilisabilité et de sécurité</li>
+						<li class="fragment">Langages orientés objet (PHP, C#, Ruby, Java, Javascript etc.)</li>
+                        <li class="fragment">1<sup>er</sup> langage objet : Smalltalk (1972)</li>					 						
+					</ul>
+				</section>	
+                 <section data-background="#87bd26">							
+						<h1>Méthodes particulières</h1>
+						<ul>
+							<li>Constructeur, destructeur <code>__construct()</code>, <code>__destruct()</code>(facultatifs en PHP)</li>	
+							<li>Méthodes magiques</li>	
+						</ul>		
+					</section>							
+			    <section data-background="#87bd26">
+					<h1>En résumé</h1>
+						<blockquote>La P.O.O., c'est la classe !</blockquote>		
+				</section>              	
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
