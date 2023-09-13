@@ -66,22 +66,22 @@ On déclare une interface de manière similaire à une classe abstraite mais ave
 			public function supprimer($id);
 		}
 
-* Utilisation d'une interface : on crée une nouvelle classe (ici _Voiture_) qui "implémente" l'interface. On utilise le mot-clé `implements` :
+* Utilisation d'une interface : on crée une nouvelle classe (ici _Voiture_) qui "implémente" l'interface. On utilise le mot-clé `implements` : 
 
-     class voiture implements crud
-     {
-         public function liste($datas)
-	     {
-	        [ CODE ]
-	     }
-		
-	     public function afficher($id)
-	     {
-	        [ CODE ]
-	     }   
+        class voiture implements crud
+        {
+            public function liste($datas)
+            {
+            [ CODE ]
+            }
 
-         // etc...
-    }
+            public function afficher($id)
+            {
+            [ CODE ]
+            }   
+
+            // etc...
+        }
 
 [Documentation](http://php.net/manual/fr/language.oop5.interfaces.php)
 

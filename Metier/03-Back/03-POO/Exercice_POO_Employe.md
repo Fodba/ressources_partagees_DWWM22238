@@ -56,19 +56,10 @@ L'entreprise souhaite intégrer dans ce système informatique les activités du 
 
 Modifier la classe _Employe_ afin de savoir si celui-ci peut disposer de chèques-vacances ou non.
 
-## Exercice 8
 
-Chaque année, des chèques Noël sont distribués aux enfants des employés. Le montant du chèque Noël dépend de l'âge des enfants :
-
-* 20 € pour les enfants de 0 à 10 ans,
-* 30 € pour les enfants de 11 à 15 ans,
-* 50 € pour les enfants de 16 à 18 ans.
- 
-Modifier le programme afin de gérer l'attribution des chèques Noël aux enfants des salariés. 
-
-Afficher si l'employé a le droit d'avoir des chèques Noël (Oui/Non). Pour ce faire, établir les conditions nécessaires dans le programme. 
-
-Si la réponse est _Oui_, afficher combien de chèques de chaque montant sera distribué à l'employé. 
-
-Si aucun chèque n'est distribué pour une tranche d'âge, ne pas afficher.
+## Exercice 9
+Un directeur est un employé comme un autre qui bénéficie d’un statut particulier. Chaque année, le
+directeur reçoit une prime calculée sur le salaire annuel (7% du brut) et sur l’ancienneté (3% du brut
+pour chaque année d’ancienneté). Cette prime est versée au 30/11 de chaque année. Créer la classe
+Directeur et gérer le calcul de la prime et le versement pour celui-ci.
 <br><br><br><br>
