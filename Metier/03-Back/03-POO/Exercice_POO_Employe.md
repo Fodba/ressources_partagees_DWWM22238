@@ -1,6 +1,6 @@
 # Exercices Programmation Orientée Objet en PHP
 
-La société Jarditou, d'envergure nationale, souhaite se doter d'un <abbr title="Système d'information de gestion des ressources humaines">S.I.R.H.</abbr> pour gérer ses employés dans les différents magasins à travers la France.
+La société Jarditou, d'envergure nationale, souhaite se doter d'un <abbr title="Système d'information de gestion des ressources humaines">S.I.R.H.</abbr> pour gérer ses employés dans les différents agences à travers la France.
 
 ## Exercice 1 
 
@@ -38,17 +38,17 @@ Afin de créer un reporting d'informations sur les employés de l'entreprise, é
 
 ## Exercice 5 
 
-L'entreprise est constituée de magasins implantés sur tout le territoire français.
+L'entreprise est constituée d'agences implantés sur tout le territoire français.
 
-Un employé fait partie d'un (et un seul) magasin. Un magasin dispose d'un nom, d'une adresse, d'un code postal, d'une ville. Ecrire une nouvelle classe _Magasins_ qui contient tous ces éléments et modifier la classe _Employe_ afin que celui-ci soit rattaché à un magasin. 
+Un employé fait partie d'un (et un seul) agence. Un agence dispose d'un nom, d'une adresse, d'un code postal, d'une ville. Ecrire une nouvelle classe _Agence_ qui contient tous ces éléments et modifier la classe _Employe_ afin que celui-ci soit rattaché à un agence. 
 
 ## Exercice 6 
 
-En ce qui concerne les repas, les magasins ne disposent pas toutes d'un restaurant d'entreprise. Les employés se trouvant dans les magasins qui n'ont pas de restaurant d'entreprise bénéficient en contrepartie de tickets restaurants. Chaque magasin dispose donc de son propre mode de restauration.
+En ce qui concerne les repas, les agences ne disposent pas toutes d'un restaurant d'entreprise. Les employés se trouvant dans les agences qui n'ont pas de restaurant d'entreprise bénéficient en contrepartie de tickets restaurants. Chaque agence dispose donc de son propre mode de restauration.
 
-Modifier la classe _Magasin_ pour gérer ce mode de restauration. 
+Modifier la classe _Agence_ pour gérer ce mode de restauration. 
 
-Afficher chaque mode de restauration de chaque employé selon le magasin dans lequel il est affecté.
+Afficher chaque mode de restauration de chaque employé selon le agence dans lequel il est affecté.
 
 ## Exercice 7 
 
