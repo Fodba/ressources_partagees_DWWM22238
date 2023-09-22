@@ -1,0 +1,365 @@
+/*============================================
+GENERAL
+============================================*/
+body{
+    background-color: #111;
+    font-family: 'Exo 2', sans-serif;
+}
+.container-fluid{
+    padding: 0; /*Suppr padding BS*/
+}
+#content-bg{
+    background : -webkit-gradient(linear, left bottom, left top, from(#222), to(#444));
+    background : linear-gradient(to top, #222, #444);
+}
+/*Links*/
+a, a:hover, a:focus{
+    text-decoration: none;
+    -webkit-transition: all 240ms;
+    transition: all 240ms;
+}
+a{
+    color: #111;
+}
+a:hover, a:focus{
+    color: #AD3825;
+}
+
+/*ROW*/
+.row{
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Typo*/
+h1, h2, h3, h4, h5, h6{
+    color: #111;
+}
+h1{
+    padding-top: 0.5rem;
+    text-transform: uppercase;
+}
+h2, h3, h4, h5, h6{
+    padding: 0.5rem 0;
+    font-variant: small-caps;
+}
+
+/*Random*/
+hr{
+    width: 10rem;
+    margin: 1rem 0;
+    border-top-color: #2E6A4A;
+    border-top-width: 3px;
+}
+.impt::after{
+    content: "*";
+    margin: 0 0.5rem;
+    color: #AD3825;
+    font-weight: bold;
+}
+/*Table*/
+.table{
+    margin-bottom: 0;
+}
+.table-responsive{
+    -webkit-box-shadow: 0 1px 3px 0 #000;
+            box-shadow: 0 1px 3px 0 #000;
+}
+.table img{
+    max-width: 50px;
+}
+/*Modal*/
+.modal-dialog{
+    max-width: 50rem;
+}
+/*Card*/
+.card-deck.card-deck-home .card{ /*Avec sidebar*/
+    flex: 0 1 calc((100% / 3) - 30px); /*Ici je calcule car je veux 3 trois sur 100% de la largeur mais je dois enlever les paddings gauche et droite de 15px chacun pour que la bonne largeur soit définie*/
+}
+.card-deck .card{
+    flex: 0 1 calc(25% - 30px); /*flex-grow(grossit) à 0 pour ne pas que des produits peu nombreux pr remplir une ligne grossissent pour occuper l'espace restant | flex-shrink(rétrécit) à 1 pour rétrécir si ça prend trop de place | flex-basis (taille ~ width), ici je calcule car je veux 4 produits par ligne, donc 25% par produits mais il y a 15px de padding à droite et à gauche ajouté par le container .col, je dois donc enlever 30px aux 25% pour que les lignes de produits prennent bien toute la place */
+    margin-bottom: 30px;
+}
+.card-img-top{
+    padding: 0.5rem 0.5rem 0;
+}
+.card-deck .card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-img{
+    padding: 1rem 0;
+}
+/*Pagination*/
+.page-link{
+    color: #2E6A4A;
+    text-transform: uppercase;
+}
+.page-link:hover,
+.page-link:focus{
+    z-index: inherit;
+    color: #AD3825;
+}
+.page-item.active .page-link{
+    background-color: #2E6A4A;
+    border-color: #2E6A4A;
+    cursor: default;
+}
+/*Breadcrumb*/
+.breadcrumb{
+    text-transform: uppercase;
+}
+.breadcrumb li:first-child::before{
+    content: '\f015';
+    margin-right: 0.5rem;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+/*Alert*/
+.alert{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+/*============================================
+FORM & BTN
+============================================*/
+label{
+    font-weight: bold;
+}
+.required:after{
+    content: "*";
+    margin-left: 0.5rem;
+    color: #AD3825;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+    background-color: #2E6A4A;
+}
+/*Buttons*/
+.btn-primary{
+    background-color: #2E6A4A;
+    border-color: #2E6A4A;
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle,
+.btn-primary:hover,
+.btn-primary:focus{
+    background-color: #26583e;
+    border-color: #26583e;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus{
+    box-shadow: 0 0 0 0.2rem rgba(38, 88, 62, 0.5); /*Ecrase la bordure bleu de bootstrap*/
+}
+.btn{
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+.btn:hover, .btn:focus{
+    -webkit-box-shadow: 0 0 3px #000;
+            box-shadow: 0 0 3px #000;
+    -webkit-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+.custom-file-label::after{
+    content: "Parcourir";
+    text-transform: uppercase;
+}
+/*Random*/
+.custom-control-label::before{
+    box-shadow: 0 0 2px #000;
+}
+/*============================================
+NAV
+============================================*/
+nav.navbar{
+    border-bottom: 2px solid #2E6A4A;
+    -webkit-box-shadow: 0 1px 3px 0 #000;
+            box-shadow: 0 1px 3px 0 #000;
+}
+nav .navbar-brand img{
+    max-height: 3.5rem;
+}
+/*BURGER*/
+nav.navbar-light button.navbar-toggler{
+    color: #2E6A4A;
+    border: none;
+    -webkit-transition: 240ms;
+    transition: 240ms;
+}
+nav.navbar-light button.navbar-toggler:hover,
+nav.navbar-light button.navbar-toggler:focus{
+    color: #AD3825;
+}
+/*MENU*/
+nav .navbar-nav .nav-item a.nav-link{
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(158,158,158);
+}
+nav .navbar-nav .nav-item a.nav-link:hover,
+nav .navbar-nav .nav-item a.nav-link:focus{
+    color: #2E6A4A;
+}
+nav .navbar-nav .nav-item a.nav-link.active{
+    color: #2E6A4A;
+}
+nav .navbar-nav .nav-item a.nav-link:before{
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0,207,255);
+    opacity: 0;
+    -webkit-transition: all 240ms;
+    transition: all 240ms;
+}
+nav .navbar-nav .nav-item a.nav-link:hover:before{
+    width: 100%;
+    background-color: #2E6A4A;
+    opacity: 1;
+}
+/*DROPDOWN*/
+nav .dropdown-menu{
+    left: auto;
+    right: 0;
+}
+nav .dropdown-item.active, .dropdown-item:active{
+    background-color: #2E6A4A;
+}
+/*============================================
+CONTENT
+============================================*/
+#content{
+    margin-top: 84px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+    max-width: 1140px; /*Taille img*/
+    background-color: #ececec;
+    -webkit-box-shadow: 1px 0 5px 1px #000;
+            box-shadow: 1px 0 5px 1px #000;
+}
+#content > img{
+    display: none;
+    border-bottom: 2px solid #2E6A4A;
+}
+/*============================================
+FOOTER
+============================================*/
+footer{
+    position: relative;
+    color: #ccc;
+    border-top: 2px solid #666;
+    -webkit-box-shadow: 0 -1px 1px 0 #000;
+            box-shadow: 0 -1px 1px 0 #000;
+}
+footer a{
+    color: #666;
+}
+footer a:hover, footer a:focus{
+    color: #ccc;
+}
+footer ul.legal{
+    list-style: none;
+    padding-left: 0;
+    text-transform: uppercase;
+}
+footer ul.legal li{
+    padding: 0.5rem 0;
+}
+footer ul.legal li + li:before{ /*Ac + tous les li qui ont un parent li veut avoir un before donc pas le premier li ms tous les autres*/
+    content: "|";
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+footer ul.legal li abbr[title]{
+    text-decoration: none;
+    cursor: inherit;
+}
+/*============================================
+DASHBOARD
+============================================*/
+#dashboard a{
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    bottom: 10%;
+    padding: 0.5rem;
+    color: rgb(66, 91, 138);
+    background-color: rgba(13, 19, 26, 0.95);
+    background: linear-gradient(225deg,rgba(22,32,42,0.95),rgba(13,19,26,0.95) 77%);
+    border: 4px double #1b2733;
+    border-left: none;
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,1);
+            box-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+#dashboard a:hover,
+#dashboard a:focus{
+    padding: 0.5rem 1rem;
+    color: rgb(103, 142, 214);
+}
+#dashboard a i{
+    -webkit-animation: back-arrow 5s ease-out infinite;
+            animation: back-arrow 5s ease-out infinite;
+}
+@-webkit-keyframes back-arrow{
+    5% { -webkit-transform: translateX(-4px); transform: translateX(-4px); }
+    10% { -webkit-transform: translateX(2px); transform: translateX(2px);}
+    0%, 15%, 100% { -webkit-transform: translateX(0px); transform: translateX(0px); }
+}
+@keyframes back-arrow{
+    5% { -webkit-transform: translateX(-4px); transform: translateX(-4px); }
+    10% { -webkit-transform: translateX(2px); transform: translateX(2px);}
+    0%, 15%, 100% { -webkit-transform: translateX(0px); transform: translateX(0px); }
+}
+/*============================================
+MEDIA
+============================================*/
+@media screen and (max-width: 991.98px) /*LG*/
+{
+    /*Card*/
+    .card-deck .card{
+        flex: 0 1 calc((100% / 3) - 30px); /*3 cartes par ligne*/
+    }
+}
+@media screen and (max-width: 767.98px) /*MD*/
+{
+    /*Card*/
+    .card-deck.card-deck-home .card,
+    .card-deck .card{
+        flex: 0 1 calc(50% - 30px); /*2 cartes par ligne*/
+    }
+    .card-img-top,
+    .card-img{
+        display: block;
+        max-width: 45%;
+        margin: auto;
+    }
+    /*FOOTER*/
+    footer ul.legal li + li:before{
+        content: none;
+    }
+}
+@media screen and (max-width: 575.98px) /*SM*/
+{
+    /*Card*/
+    .card-deck.card-deck-home .card,
+    .card-deck .card{
+        flex: 0 1 100%; /*1 carte par ligne : Inutile car .card-deck se met en colonne et donc, chaque carte prend toute une ligne mais je le garde pour l'exemple*/
+    }
+    .card-img-top,
+    .card-img{
+        max-width: 55%;
+    }
+}

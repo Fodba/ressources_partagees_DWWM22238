@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMS | reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+		/* ------------------------------------------------
+		* STYLES PERSO
+		* ------------------------------------------------- */
+		
+		.slides section h1 
+		{
+			color: #FFF;
+            font-size: 60px;			
+		}
+		
+		.slides section h2 
+		{
+			font-size: 50px;			
+		}
+		
+		.code {
+		    color: yellow;
+			background-color: #000;
+			font-family: "Courier New";
+		}
+			
+		img 
+		{
+		    border: none !important;
+		}
+		
+		.reveal a, .reveal a:hover, reveal a:visited 
+		{
+			color: #FFF;
+			text-decoration: underline;			
+		}		
+			
+		/* Fonctionne pour <code> si on met <code> dans un <div> */
+		.reveal .text-left 
+		{
+			text-align: left;			
+		}
+			
+		.ma10 
+		{
+			margin: 10px;
+		}
+		</style>		
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>	
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">			
+			    <section data-background="#87bd26">
+					<img src="images/reveal_home.jpg" width="600" height="400" alt="AFPA">				 					
+				</section>			
+			  	<section data-background="#87bd26">
+					   <h1>C.M.S.</h1>
+					   <img src="images/cms.jpg" alt="CMS" title="CMS">
+					   <h2>Content Management System</h2> 
+					   <h2 class="fragment">= Système de gestion de contenu</h2> 					   				 	
+				</section>
+				<section data-background="#87bd26">
+					<h1>C.M.S.</h1>
+						<ul>
+							<li>Solution prête à l'emploi (paramétrage)</li>
+							<li class="fragment">Connaissances techniques limitées (en théorie)</li>
+							<li class="fragment">Séparation contenu (données)/design (thèmes interchangeables)</li>
+							<li class="fragment">Séparation front-office/back-office</li>	
+							<li class="fragment">Conception modulaire (plugins, extensions)</li>		
+ 				        </ul>								 
+				</section>           	
+				<section data-background="#87bd26">
+					<h1>Avant les C.M.S.</h1>
+						<ul>
+							<li>Sites statiques (HTML sans BDD)</li>
+							<li class="fragment">Difficultés de mises à jour</li>
+							<li class="fragment">Alternatives : développement sur-mesure, frameworks</li>													
+ 				        </ul>								
+				</section>           	
+				<!-- fin slides verticales --> 
+                
+				<section data-background="#87bd26">				
+					<section data-background="#87bd26">
+						<h1>Fonctionnalités</h1>
+						<ul>
+						   	<li><a href="http://www.blogduwebdesign.com/javascript-ressources/wysiwyg-wysiwym-faisons-le-point/538" title="Interface Wysiwyg" target="_blank">Interface de saisie de contenu (Wysiwyg)</a></li>
+							<li class="fragment">Gestion des menus</li>		
+							<li class="fragment">Gestion des médias</li>		
+							<li class="fragment">Gestion des utilisateurs (rôles, droits)</li>		
+							<li class="fragment">Gestion des menus</li>		
+	                        <li class="fragment">Utilitaires divers (pagination, référencement, cache, connecteurs etc.)</li>										
+						</ul>								
+					</section>                
+					<section data-background="#87bd26">
+					  <h1>Workflow (exemple)</h1>
+					  <img src="images/workflow.jpg" alt="Workflow" title="Workflow">										
+					</section>		
+                </section>			
+				<!-- fin slides verticales --> 
+				
+				<section data-background="#87bd26">
+					<h1>Modules et thèmes</h1>
+					<ul>
+						<li>Natifs, gratuits, payants, sur-mesure</li>
+						<li class="fragment">Installation/désinstallation simple</li>		
+						<li class="fragment">Modifications graphiques en live (ajout d'un bloc)</li>	
+                        <li class="fragment">Thèmes "responsive"</li>								
+					</ul>								
+				</section>                				
+				<section data-background="#87bd26">
+					  <h1>Qu'est-ce qu'un contenu</h1>
+						 <ul>
+							<li>Un contenu : texte (article), médias (images, vidéo), fichier (PDF...)</li> 
+							<li class="fragment">Types de contenu prédéfinis : article, page, média, produit (e-commerce)</li>	
+							<li class="fragment">Types de contenu créé par l'utilisateur (par exemple : annonce immo)</li>	
+							<li class="fragment">Catégorisation des contenus (taxonomies, mots-clés)</li>			
+							<li class="fragment">Métadonnées (auteur, modifications etc.)</li>																		
+						</ul>							
+				</section>								
+				<section data-background="#87bd26">
+					<h1>Usages</h1>
+					<ul>
+						<li>Blogs</li>
+						<li class="fragment">Sites vitrines/corporate (T.P.E., P.M.E.), portails</li>
+						<li class="fragment">Portails, Intranet, extranet</li>	
+                        <li class="fragment">E-commerce</li>							
+						<li class="fragment">Forums, réseaux sociaux, etc.</li>	                        	 											
+					</ul>			
+				</section>			
+                <section data-background="#87bd26">
+					<h1>Technologies</h1>
+					<ul>
+						<li>PHP (CMS "purs") : Wordpress, Joomla, Drupal, Typo3, EzPublish</li>
+						<li>PHP : E-commerce : Prestashop, Magento...</li>
+						<li class="fragment">Autres langages : Java, Microsoft Sharepoint, NodeJS etc.</li>								 					     					
+					</ul>			
+				</section>			
+                 <section data-background="#87bd26">
+					<h1>Critères de choix</h1>
+					<ul>
+						<li>Selon l'expression de besoins (fonctionnalités)</li>
+						<li class="fragment">Compétences équipes</li>						
+                        <li class="fragment">Communauté</li>							
+						<li class="fragment">Coûts (comme d'habitude !)</li>			     					
+					</ul>			
+				</section>										
+				<section data-background="#87bd26">
+					<h1>Avantages</h1>
+					<ul>
+						<li>Prêt à l'emploi (en théorie seulement)</li>
+						<li>Simplicité de gestion des contenus</li>
+						<li class="fragment">Couverture fonctionnelle (des modules pour tout ou presque)</li>
+						<li class="fragment">Bonnes pratiques implémentées</li>
+						<li class="fragment">Gain de temps</li>
+						<li class="fragment">Coût modéré (selon techno)</li>
+					</ul>			
+				</section>		
+				<section data-background="#87bd26">
+					<h1>Inconvénients</h1>
+					<ul>
+						<li>Courbe d'apprentissage : compétences spécifiques (fonctionnelles, techniques)</li>
+						<li class="fragment">Complexité fonctionnelle et technique, respect de l'architecture</li>
+						<li class="fragment">Intégration d'autres technos parfois difficile</li>
+						<li class="fragment">Fonctionnalités inutiles, trop d'extensions à installer</li>						
+						<li class="fragment">Fréquence des mises à jour (noyau, modules, thèmes, traductions)</li>
+						<li class="fragment">Sécurité : code connu, failles publiées</li>
+						<li class="fragment">Choix difficiles (solution, technos, modules, thèmes etc.)</li>
+					</ul>			
+				</section>		
+				<section data-background="#87bd26">
+				<h1>Wordpress</h1>
+					<ul>
+						<li>60% des CMS, 35% des sites toutes technos confondues</li>											
+					</ul>			
+				</section>	
+	            <section data-background="#87bd26">
+					<h1>E-commerce : problématiques</h1>
+					<ul>
+						<li>Gestion des produits (déclinaisons, informations, photos etc.)</li>
+						<li class="fragment">Prix, TVA/taxes, facturation</li>
+						<li class="fragment">Livraison : frais, logistique, SAV</li>
+						<li class="fragment">Réglementation (produits autorisés, comptabilité/archivages, données personnelles)</li>
+						<li class="fragment">Moyens de paiement, paiement en ligne, sécurité</li>
+						<li class="fragment">Intégration au S.I. de l'entreprise (CRM/ERP, production, logistique, compta)</li>
+						<li class="fragment">E-marketing</li>
+					</ul>			
+				</section>						
+										
+			</div> <!-- slides -->      
+		</div> <!-- reveal -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+							
+                transition: 'convex',							
+				progress: true,		
+				// center: false,			
+			});			
+		</script>
+	</body>
+</html>
