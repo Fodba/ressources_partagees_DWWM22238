@@ -7,9 +7,16 @@
 </head>
 <body>
     <h1>Listes des catégories</h1>
-    <div><?php echo $test; ?></div>
     <?php 
-        var_dump($categories);
+    foreach ($categories as $categorie) {
+    ?>
+    <div id="cat1" class="cat1">
+        <a href=<?php echo site_url("/produits/listeProduits/".$categorie->cat_id) ?>>
+            <h3><?php echo $categorie->cat_name; ?></h3>
+        </a>
+    </div>
+    <?php 
+    }
     ?>
 </body>
 </html>

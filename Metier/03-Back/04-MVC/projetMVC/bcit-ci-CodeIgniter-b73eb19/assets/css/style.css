@@ -1,0 +1,14 @@
+.pro_card{
+    display: inline-block;
+    vertical-align: top;;
+    width: 45%;
+    height: 150px;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.pro_card h3{
+    text-align: center;
+    margin: auto;
+}
